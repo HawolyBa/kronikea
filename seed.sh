@@ -1,0 +1,1 @@
+LOCATION=europe-west1 PROJECT_ID=story-center ALGOLIA_APP_ID=TGYB99491G ALGOLIA_INDEX_NAME=kronikea-search COLLECTION_PATH=stories FIELDS=id,authorId,authorName,banner,title,createdAt,public,language,categories,status,summary,mature GOOGLE_APPLICATION_CREDENTIALS=./database/serviceAccount.json npx firestore-algolia-search

@@ -1,0 +1,259 @@
+.grid__card {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.characters__grid__card {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.story__grid {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 15px
+}
+
+.card {
+  //width: 22%;
+  height: auto;
+  background: #f9f9f9;
+  position: relative;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column;
+
+  &:hover {
+    transition: all 0.8s ease;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 210px;
+    border-radius: 15px;
+    box-shadow: 8px 2px 13px 0px rgba(183, 183, 183, 0.6);
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  &__author {
+    color: $green;
+    font-weight: 600;
+    font-size: 0.8rem
+  }
+
+  &__button {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    margin-top: 5px;
+  }
+}
+
+.user_grid__card {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+}
+
+.user__card {
+  // padding: 10px 16px;
+  border-radius: 5px;
+  background: $light-bg;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  h3 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    //margin-bottom: 15px;
+  }
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-right: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__counters {
+    font-size: 0.7rem
+  }
+
+  .follow__btn {
+    span {
+      text-transform: uppercase;
+      font-size: 0.5rem;
+    }
+
+  }
+}
+
+.chara-card,
+.mini-card {
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.story__mini__card {
+  .card-description {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.category-card {
+  span {
+    border-top: 1px solid $green;
+    border-bottom: 1px solid $red;
+    border-color: transparent;
+    color: #222;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3) // filter: blur(2px);
+  }
+
+  &:hover span {
+    border-top: 1px solid $green;
+    border-bottom: 1px solid $red;
+    transition: all 0.2s ease-in
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .characters__grid__card {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1080px) {
+  .story__grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+
+  .characters__grid__card {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .story__grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .characters__grid__card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.story-card {
+  min-height: 200px;
+  background: #f9f9f9;
+  border-right: 3px dotted #999;
+
+  .poster {
+    // height: 200px;
+    border-radius: 15px 0 0 0;
+    overflow: hidden;
+  }
+
+  h3 {
+    color: #02091f;
+    letter-spacing: 1px;
+  }
+
+  .circle-border {
+    padding: 14px 15px;
+    background-color: $light-bg;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .down-border {
+    bottom: -13px;
+    left: -15px;
+  }
+
+  .up-border {
+    top: -8px;
+    left: -15px;
+  }
+
+  .genre {
+    font-size: 0.7rem
+  }
+
+}
+
+.after-border {
+  &::after {
+    left: 2%;
+    top: 2%;
+    width: 96%;
+    height: 96%;
+  }
+}
+
+.user-card-avatar {
+  width: 65px;
+  height: 65px;
+
+  &::before {
+    width: 70px;
+    height: 70px;
+  }
+}

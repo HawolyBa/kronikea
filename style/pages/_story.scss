@@ -1,0 +1,136 @@
+.story {
+  //margin-top: 5px;
+
+  .poster {
+    width: 300px;
+    height: 450px;
+
+    &::before {
+      width: 310px;
+      height: 460px;
+    }
+  }
+
+  .metadatas {
+    li:before {
+      content: '\00a0\2022\00a0\00a0';
+      color: #999;
+      // color: rgba(0, 0, 0, 0.5);
+      font-size: 11px;
+      margin: 0 12px
+    }
+
+    li:first-child:before {
+      content: '';
+      margin: 0
+    }
+  }
+
+  .banner {}
+
+  .gradient-background {
+    backdrop-filter: blur(3px);
+    background: black;
+    background: linear-gradient(113deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) 100%);
+  }
+
+  .story-title {
+    // text-shadow: 1px 1px 1px #1C0C08;
+  }
+
+  .story-details-content {
+    width: 94%;
+    margin: 0 auto;
+    left: 3%;
+    background: #edecec;
+  }
+
+  .story-cover {
+    height: 65vh;
+  }
+
+  &__content {
+    margin-top: 5px;
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 5fr;
+    min-height: 300px;
+    grid-gap: 10px
+  }
+
+  &__left {
+    background-color: white;
+
+    h2 {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .bio {
+      color: #9f9696;
+      font-size: 0.8rem;
+      margin: 15px 0
+    }
+  }
+
+  &__right {
+    padding: 15px;
+
+    h4 {
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      font-weight: lighter;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .story {
+    .story-cover {
+      height: 45vh;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .story {
+    .poster {
+      width: 200px;
+      height: 300px;
+
+      &::before {
+        width: 210px;
+        height: 310px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .story {
+    .story-cover {
+      height: 30vh;
+    }
+
+    .story-title {
+      text-shadow: none
+    }
+  }
+}
+
+@media (max-width:1280px) and (min-width:768px) {
+  .story {
+    .poster {
+      width: 270px;
+      height: 400px;
+
+      &::before {
+        width: 280px;
+        height: 410px;
+      }
+    }
+  }
+}

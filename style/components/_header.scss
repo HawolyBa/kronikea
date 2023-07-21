@@ -1,0 +1,142 @@
+#main-header {
+  z-index: 999;
+}
+
+header.main__header {
+  height: 70px;
+
+  .main_title {
+    font-size: 1.6rem;
+
+    &::first-letter {
+      color: $green;
+      font-weight: bolder;
+    }
+  }
+
+
+  //background: #f0ebea // padding: 20px 30px 10px 30px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // //border-bottom: 1px solid #cdcdcd;
+  // background-color: white;
+
+  // .menu__left__side {
+  //   @include flex-center
+  // }
+
+  // .main__header__menu__btn {
+  //   cursor: pointer;
+  // }
+
+  // #site__logo {
+  //   height: 100%;
+  //   display: flex;
+  //   align-items: center;
+  //   margin-right: 15px;
+  //   cursor: pointer;
+
+  //   img {
+  //     height: 40px;
+  //     cursor: pointer;
+  //   }
+
+  //   h1 {
+  //     font-weight: lighter;
+  //     font-size: 22px;
+  //     margin-left: 5px;
+  //     text-transform: uppercase;
+  //     color: black;
+
+  //     .title__e {
+  //       color: $red;
+  //       font-weight: bolder;
+  //     }
+
+  //     .title__a {
+  //       color: $green;
+  //       font-weight: bolder;
+  //     }
+  //   }
+  // }
+
+  // a {
+  //   font-weight: 400;
+  //   color: $dark-font;
+  // }
+
+  // nav {
+  //   margin-right: 20px;
+
+  //   ul {
+  //     display: flex;
+  //     align-items: center;
+
+  //     li {
+  //       margin: 0 5px;
+  //       font-size: 0.9rem;
+  //     }
+  //   }
+
+  //   .login__link {
+  //     border-right: 1px solid $dark-font;
+  //     padding-right: 10px;
+  //     margin-left: 20px;
+
+  //     a {
+  //       color: $dark-font;
+  //       font-size: 0.9rem;
+  //     }
+  //   }
+  // }
+
+  // .header__btn__grp {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+
+  //   .header__btn__grp__profile {
+  //     padding-right: 10px;
+  //     margin-right: 10px;
+  //     border-right: 1px solid lighten($dark-font, 50%)
+  //   }
+
+  //   a {
+  //     margin-right: 20px;
+  //     padding-bottom: 6px;
+  //     border-bottom: 2px solid white;
+  //   }
+  // }
+
+  // .header__btn {
+  //   cursor: pointer;
+
+  //   &:hover {
+  //     transition: 0.6s ease;
+  //     transform: scale(0.95);
+  //   }
+
+  //   &:active {
+  //     transition: 0.6s ease;
+  //     transform: scale(1.1);
+  //   }
+  // }
+
+  // // .main__header__menu__btn {
+  // //   display: none;
+  // // }
+
+}
+
+@media (max-width: 768px) {
+  header.main__header {
+    .header__btn__grp {
+      display: none;
+    }
+
+    .main__header__menu__btn {
+      display: block;
+    }
+  }
+}

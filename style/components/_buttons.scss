@@ -1,0 +1,47 @@
+.signup__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup__btn {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: $light-font;
+  transition: all 0.3s;
+  position: relative;
+  background: rgba(179, 119, 82, .6);
+  border: 2px solid white;
+
+  // border-radius: 8px;
+  // background-size: 300% 100%;
+  // background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+  &:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+  }
+
+  span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+
+}
+
+.primary__button,
+.primary__button[type=submit] {
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: $green;
+  color: $light-font;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border-radius: 2px;
+
+  &:hover {
+    transition: all 0.5s ease-in;
+    box-shadow: 10px 5px 0 $red,
+      -10px -5px 0 $red;
+  }
+}

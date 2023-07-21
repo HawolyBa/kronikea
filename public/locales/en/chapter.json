@@ -1,0 +1,18 @@
+{
+  "chapter": "chapter",
+  "comment": "comment",
+  "comments": "comments",
+  "delete": "delete",
+  "replies": "replies",
+  "reply": "reply",
+  "reply-answer": "reply",
+  "review": "review this chapter",
+  "spoilers": "Careful, this section may contain spoilers about the chapter",
+  "validate-spoilers": "Are you sure you want to access it ?",
+  "previous-chapter": "previous chapter",
+  "next-chapter": "next chapter",
+  "login-message": "You need to be logged in to post a comment.",
+  "click-here": "Click here",
+  "story-page": "Story page",
+  "change-font": "Font size"
+}

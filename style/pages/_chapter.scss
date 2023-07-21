@@ -1,0 +1,49 @@
+.chapter {
+
+  &__body {
+    p {
+      margin-bottom: 10px
+    }
+  }
+
+  .gradient-background {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    background: linear-gradient(113deg, transparent, rgba(0, 0, 0, 1) 58%);
+  }
+
+  .nav-btns {
+    .right-btn {
+      left: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5262;
+    }
+
+    .left-btn {
+      right: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5262;
+    }
+  }
+
+  &__content {
+    width: 90%
+  }
+
+}
+
+.editor-class {
+  padding: 10px;
+  border: 1px solid #F1F1F1;
+}
+
+@media (max-width:768px) {
+  .chapter {
+    &__content {
+      width: 100%
+    }
+  }
+}

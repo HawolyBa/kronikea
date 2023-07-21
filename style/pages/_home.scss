@@ -1,0 +1,71 @@
+.home {
+  &__cover {
+    height: 500px;
+  }
+
+  &__heading {
+    font-size: 1.9rem
+  }
+
+  &__sub-heading {
+    color: $red
+  }
+
+  .right-btn {
+    right: 20px;
+    top: 45%;
+    transform: translateY(-45%);
+  }
+
+  .left-btn {
+    left: 20px;
+    top: 45%;
+    transform: translateY(-45%);
+  }
+
+  .carousel {
+    h2 {
+      font-size: 1.8rem;
+      border-color: $red
+    }
+  }
+
+  .triple-card {
+
+    div:nth-child(3),
+    div:nth-child(1) {
+      filter: grayscale(100%);
+    }
+
+    &:hover {
+      div:nth-child(2) {
+        transition: all 0.3s ease-in;
+        top: 15px
+      }
+
+      div:nth-child(1) {
+        transition: all 0.3s ease-in;
+        transform: rotate(-15deg);
+      }
+
+      div:nth-child(3) {
+        transition: all 0.3s ease-in;
+        transform: rotate(15deg)
+      }
+    }
+  }
+}
+
+.swiper-wrapper {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .home {
+    .carousel {
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

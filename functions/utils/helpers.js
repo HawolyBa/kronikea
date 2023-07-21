@@ -1,0 +1,18 @@
+exports.CATEGORIES = [
+  { name: "Drama", value: "drama", id: "MKORaSY4m1RnK3kSSLDT" },
+  { name: "Comedy", value: "comedy", id: "bDXYzqnUtpLZDNv99XTq" },
+  { name: "Horror", value: "horror", id: "wHEuUmXjJYZUt4uoeu2n" },
+  { name: "Romance", value: "romance", id: "6GCRSMJHcmFlTvfbtMtJ" },
+  { name: "Sci-fi", value: "sci-fi", id: "rBU8Nd35AMpnd1ok94HC" },
+  { name: "Fantasy", value: "fantasy", id: "eALFc7teavzjUMjVdqt8" },
+  { name: "Humor", value: "humor", id: "B5Efox2jEjNpywxuo3KR" },
+  { name: "Action", value: "action", id: "EHgCk88Wl1Y4a3LW0Jcp" },
+  { name: "Thriller", value: "thriller", id: "F0SJi8NqbtQlT9IPiqxf" },
+  { name: "Supernatural", value: "supernatural", id: "IcbLNSOFgVBbcU4e884n" },
+  { name: "Adventure", value: "adventure", id: "LPg3uNujLk6jaBFfjMQY" },
+  { name: "Mystery", value: "mystery", id: "Zrx8V24iaaC0jTndqV7G" },
+  { name: "Western", value: "western", id: "bIF4GwpKSJFpst8birHr" },
+  { name: "History", value: "history", id: "da4dbvwvDDaJdGPOW7QF" },
+  { name: "Crime", value: "crime", id: "oIBGBUyDGH0djcQSSnws" },
+  { name: "Fanfiction", value: "fanfiction", id: "zAr1eHniFgWW0xAqj1ti" },
+];

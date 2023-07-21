@@ -1,0 +1,127 @@
+// <figure className="w-full h-fit-content bg-white shadow-lg rounded-md cursor-pointer">
+//   <div className={`w-full h-40 p-2 `}>
+//     <div className={`w-full relative h-full rounded-md bg-cover bg-[url(${story.image})]`}>
+//       <div className="backdrop-blur-sm overflow-hidden rounded-md gradient-background w-full h-full p-4 text-white">
+//         <div className="flex">
+//           <img src={story.image} alt={story.title} className="w-22 h-28 object-cover  shadow-lg" />
+//           <div className=" mx-2">
+//             <h4 className="mb-3 uppercase text-xs">{story.title}</h4>
+
+//             <div className='flex items-center'>
+//               <div className="mr-3 rounded-full border w-8 h-8 flex items-center justify-center">
+//                 <h3 className=" text-xs">4.8</h3>
+//               </div>
+//               <section id="rate" className="rating">
+//                 <input type="radio" id="star_5" name="rate" value="5" />
+//                 <label htmlFor="star_5" title="Five">&#9733;</label>
+//                 <input type="radio" id="star_4" name="rate" value="4" />
+//                 <label htmlFor="star_4" title="Four">&#9733;</label>
+//                 <input type="radio" id="star_3" name="rate" value="3" />
+//                 <label htmlFor="star_3" title="Three">&#9733;</label>
+//                 <input type="radio" id="star_2" name="rate" value="2" />
+//                 <label htmlFor="star_2" title="Two">&#9733;</label>
+//                 <input type="radio" id="star_1" name="rate" value="1" />
+//                 <label htmlFor="star_1" title="One">&#9733;</label>
+//               </section>
+//               {/* <p className="ml-2 text-xs mt-1">130k reviews</p> */}
+//             </div>
+
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+//   <figcaption className='p-2'>
+//     <div className="flex justify-between items-center">
+//       <Author data={story} />
+//       <div className="my-2">
+//         <Tag color="#27746c">Drama</Tag>
+//         <Tag color="#27746c">Romance</Tag>
+//       </div>
+//       {/* <div className="my-2">
+//         <Tag color="#27746c">Drama</Tag>
+//         <Tag color="#27746c">Romance</Tag>
+//       </div>
+//       <div className="grid grid-cols-3 text-center gap-3 mt-2 mb-3">
+//         <span className='bg-gray-500 py-1'><BookOutlined /> {story.chaptersCount}</span>
+//         <span className='bg-gray-500 py-1'><HeartOutlined /> {story.charactersCount}</span>
+//         <span className='bg-gray-500 py-1'><CommentOutlined /> {story.commentsCount}</span>
+//       </div> */}
+//     </div>
+
+//   </figcaption>
+// </figure>
+// <figure className="w-full h-72 bg-white shadow-lg flex">
+//   <div className="w-72 h-full">
+//     <img src={story.image} alt={story.title} className="w-full h-full object-cover" />
+//   </div>
+//   <figcaption className='w-full h-full p-4'>
+//     <h3 className='uppercase'>{story.title}</h3>
+//     <Author data={story} />
+//   </figcaption>
+// </figure>
+// <div className="story__card">
+//   <div className="story__card__img">
+//     <img src={story.image} alt={story.title} />
+//     <div className="story__card__button">
+//       <button className="primary__button">
+//         Read
+//       </button>
+//     </div>
+//   </div>
+//   <div className="story__card__content w-full">
+//     <div className="story__card__title">
+//       <h3>{story.title}</h3>
+//     </div>
+//     <div className="story__card__author">
+//       <small>{story.author}</small>
+//     </div>
+//     <div className="story__card__genres">
+//       <Tag color="#27746c">Drama</Tag>
+//       <Tag color="#27746c">Romance</Tag>
+//     </div>
+//     <div className="story__card__counter">
+//       <span><BookOutlined /> {story.chaptersCount}</span>
+//       <span><HeartOutlined /> {story.charactersCount}</span>
+//       <span><CommentOutlined /> {story.commentsCount}</span>
+//     </div>
+//     <section id="rate" className="rating">
+//       <input type="radio" id="star_5" name="rate" value="5" />
+//       <label htmlFor="star_5" title="Five">&#9733;</label>
+//       <input type="radio" id="star_4" name="rate" value="4" />
+//       <label htmlFor="star_4" title="Four">&#9733;</label>
+//       <input type="radio" id="star_3" name="rate" value="3" />
+//       <label htmlFor="star_3" title="Three">&#9733;</label>
+//       <input type="radio" id="star_2" name="rate" value="2" />
+//       <label htmlFor="star_2" title="Two">&#9733;</label>
+//       <input type="radio" id="star_1" name="rate" value="1" />
+//       <label htmlFor="star_1" title="One">&#9733;</label>
+//     </section>
+//   </div>
+// </div>
+
+<div class="w-full rounded cursor-pointer overflow-hidden shadow-lg">
+  <div className="w-full h-64">
+    <img class="w-full" src={story.image} className="w-full h-full object-cover" alt="The Shawshank Redemption Poster" />
+  </div>
+  <div class="px-4 py-4">
+    <div class="font-bold mb-2">{story.title}</div>
+
+    {type !== 'character' ? <p class="text-gray-700 text-base text-sm">
+      <Author data={story} />
+    </p> : ''}
+    {/* <p class="text-gray-700 text-base "> */}
+    {/* <div className="flex">
+              <span class="font-bold mr-1 text-xs">Genres: </span> <span className="capitalize text-xs">{story.genres.join(', ')}</span>
+            </div> */}
+    {/* <div className="story__card__genres text-xs">
+              <Tag color="#27746c">Drama</Tag>
+              <Tag color="#27746c">Romance</Tag>
+            </div>
+          </p> */}
+    {/* <p class="text-gray-700 text-base flex text-sm">
+          <span class="font-bold">Ratings:</span>
+          <Ratings />
+        </p> */}
+  </div>
+</div>

@@ -1,0 +1,18 @@
+{
+  "chapter": "chapitre",
+  "comment": "commentaire",
+  "comments": "commentaires",
+  "delete": "supprimer",
+  "replies": "réponses",
+  "reply": "répondre",
+  "reply-answer": "réponse",
+  "review": "donnez votre avis sur ce chapitre",
+  "spoilers": "Attention, cette section peut contenir des spoilers sur le chapitre",
+  "validate-spoilers": "Voulez-vous vraiment y accéder ?",
+  "previous-chapter": "chapitre précédent",
+  "next-chapter": "chapitre suivant",
+  "login-message": "Vous devez être connecté(e) pour poster un commentaire",
+  "click-here": "Cliquez ici",
+  "story-page": "Page de l'histoire",
+  "change-font": "Taille de la police"
+}
