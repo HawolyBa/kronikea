@@ -41,7 +41,7 @@ const Contact = () => {
       <div className="contact p-4 w-full">
         <div className='bg-white dark:bg-zinc-900 rounded-xl max-w-screen-lg py-8 md:px-12 px-4 mx-auto shadow-lg'>
           <h2 className='text-center text-2xl uppercase mb-8'>Contact Us</h2>
-          <p className="mb-4">Do you have questions or comments for Kronikea? We'd love to hear from you! Please fill out the form below and we'll get back to you as soon as possible.</p>
+          <p className="mb-4">Do you have questions or comments for Kronikea? We would love to hear from you! Please fill out the form below and we will get back to you as soon as possible.</p>
           <div className='my-8'>
             {
               !auth.isLoading && auth.user ?
