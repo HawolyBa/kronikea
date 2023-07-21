@@ -137,7 +137,7 @@ function useProvideAuth() {
   const isGoogleOnly = auth.currentUser && auth.currentUser.providerData.map(data => data.providerId).includes("google.com") && auth.currentUser.providerData.length === 1;
 
   const resetEmail = (email) => {
-    return sendPasswordResetEmail(auth, email, { url: "http://localhost:3000/auth" })
+    return sendPasswordResetEmail(auth, email, { url: "http://https://kronikea.vercel.app/auth" })
       .then(() => {
         setErrors({ ...errors, email: "" })
         return true
