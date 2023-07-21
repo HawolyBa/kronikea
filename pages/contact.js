@@ -51,7 +51,7 @@ const Contact = () => {
                 </ul> :
                 <Link href="/auth" className="underline block mb-4">Please login to fill the form</Link>
             }
-            <p className='mb-4'>Alternatively, you can reach us via email at <b>contact@kronikea.com</b></p>
+            <p className='mb-4'>Alternatively, you can reach us via email at <b>contact@kronikea.com </b></p>
             <Form
               form={form}
               layout="vertical"
