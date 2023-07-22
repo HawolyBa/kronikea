@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, initializeFirestore } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -28,9 +28,7 @@ const devConfig = {
 const config = process.env.NODE_ENV === "production" ? prodConfig : devConfig;
 
 const app = initializeApp(config);
-const db = initializeFirestore(app, {
-  experimentalForceLongPolling: true,
-})
+const db = getFirestore(app)
 const auth = getAuth(app)
 const storage = getStorage(app)
 const provider = new GoogleAuthProvider();
