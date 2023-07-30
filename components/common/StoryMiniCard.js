@@ -12,7 +12,7 @@ const StoryMiniCard = ({ data }) => {
       <figure style={{ width: '150px' }} className={`cursor-pointer mb-4 flex flex-col`}>
         <div className={`mini-card transition duration-150 w-full after-border after:absolute after:border after:content-[''] after:dark:border-zinc-900 after:bg-transparent after:rounded-md`} style={{ height: "200px", position: 'relative' }}>
           {/* <Image layout='fill' objectFit='cover' src={data.banner ? data.banner : placeholders.card} alt={data.title} className={`shadow-lg rounded-md min-h-full`} /> */}
-          <img src={data.banner ? data.banner : placeholders.card} alt={data.title} className={`w-full h-full object-cover shadow-lg rounded-md min-h-full`} />
+          <img loading='lazy' src={data.banner ? data.banner : placeholders.card} alt={data.title} className={`w-full h-full object-cover shadow-lg rounded-md min-h-full`} />
         </div>
         <figcaption className="overflow-hidden text-center leading-3">
           <h3 className="text-sm mt-2 p-0 mb-0 font-medium w-full whitespace-nowrap overflow-hidden text-ellipsis">{data.title}</h3>

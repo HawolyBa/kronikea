@@ -19,7 +19,7 @@ const StoryCardMini = ({ data, type }) => {
           : <Badge.Ribbon size="small" text={<span className="flex items-center"><IoIosLock style={{ fontSize: "1.1rem" }} /></span>} color={colors.secondary}>
             <div className={`w-24 h-36 rounded-md overflow-hidden relative after-border after:absolute after:border after:content-[''] after:dark:border-zinc-900 after:bg-transparent after:rounded-md`}>
               {/* <Image src={data.banner ? data.banner : placeholders.card} alt={data.title} layout='fill' objectFit='cover' /> */}
-              <img src={data.banner ? data.banner : placeholders.card} alt={data.title} className=" w-full h-full object-cover" />
+              <img loading='lazy' src={data.banner ? data.banner : placeholders.card} alt={data.title} className=" w-full h-full object-cover" />
             </div>
           </Badge.Ribbon>
         }

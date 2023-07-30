@@ -6255,6 +6255,11 @@
   "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.1.tgz"
   "version" "3.2.1"
 
+"react-ga4@^2.1.0":
+  "integrity" "sha512-ZKS7PGNFqqMd3PJ6+C2Jtz/o1iU9ggiy8Y8nUeksgVuvNISbmrQtJiZNvC/TjDsqD0QlU5Wkgs7i+w9+OjHhhQ=="
+  "resolved" "https://registry.npmjs.org/react-ga4/-/react-ga4-2.1.0.tgz"
+  "version" "2.1.0"
+
 "react-i18next@^12.2.0":
   "integrity" "sha512-5XeVgSygaGfyFmDd2WcXvINRw2WEC1XviW1LXY/xLOEMzsCFRwKqfnHN+hUjla8ZipbVJR27GCMSuTr0BhBBBQ=="
   "resolved" "https://registry.npmjs.org/react-i18next/-/react-i18next-12.2.0.tgz"
