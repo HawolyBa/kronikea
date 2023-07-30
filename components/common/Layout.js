@@ -1,6 +1,5 @@
 import React from 'react'
 import Script from 'next/script'
-import Head from 'next/head';
 import { notification } from 'antd';
 import CookieConsent from "react-cookie-consent";
 import { useTranslation } from 'next-i18next'
@@ -65,43 +64,38 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
   }, [notifications, currentNotification])
 
   return (
-    <>
-      <Head>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" />
-        <Script id="google-analytics">
-          {`
+    <div className={`layout ${darkTheme ? 'dark' : ''}`}>
+      <Header setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
+      <div className='relative'>
+        {contextHolder}
+        {children}
+      </div>
+      <Footer />
+      <CookieConsent
+        location="bottom"
+        buttonText={t('common:accept')}
+        cookieName="myAwesomeCookieName2"
+        style={{ background: "#222" }}
+        buttonStyle={{
+          background: "#27746c", color: "#eee", fontSize: "13px"
+        }}
+        expires={150}
+      >
+        {t('common:cookies')}{" "}
+
+      </CookieConsent>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" />
+      <Script id="google-analytics">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-MPXV4K7DRX');
         `}
-        </Script>
-      </Head>
-      <div className={`layout ${darkTheme ? 'dark' : ''}`}>
-        <Header setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
-        <div className='relative'>
-          {contextHolder}
-          {children}
-        </div>
-        <Footer />
-        <CookieConsent
-          location="bottom"
-          buttonText={t('common:accept')}
-          cookieName="myAwesomeCookieName2"
-          style={{ background: "#222" }}
-          buttonStyle={{
-            background: "#27746c", color: "#eee", fontSize: "13px"
-          }}
-          expires={150}
-        >
-          {t('common:cookies')}{" "}
-
-        </CookieConsent>
-      </div>
-    </>
+      </Script>
+    </div>
   );
-
 }
 
 export default Layout
