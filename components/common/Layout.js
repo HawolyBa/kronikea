@@ -68,24 +68,20 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
   return (
     <>
       <Head>
-        <Script data-ad-client="ca-pub-2847418034592467" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></Script>
-        <Script strategy='lazyOnload' src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" />
-        <Script strategy='lazyOnload' dangerouslySetInnerHTML={{
-          __html:
-            `
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-MPXV4K7DRX');
         `
-        }} />
-        {/* 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" />
-        <script
-
-        />*/}
-
+          }}
+        />
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2847418034592467" crossorigin="anonymous"></Script>
       </Head>
 
       <div className={`layout ${darkTheme ? 'dark' : ''}`}>
