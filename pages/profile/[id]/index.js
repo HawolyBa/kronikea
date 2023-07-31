@@ -107,7 +107,7 @@ const Profile = (props) => {
                       </SocialButtons>}
                       <Tooltip placement='bottom' title={"Copy my link"}>
                         <div onClick={() => {
-                          navigator.clipboard.writeText(`https://www.kronikea.com/${data?.profile?.id}`)
+                          navigator.clipboard.writeText(`https://www.kronikea.com/profile/${data?.profile?.id}`)
                         }} className="active:scale-95 transition duration-200 ease-in-out w-6 h-6 flex items-center justify-center rounded-md drop-shadow-xl mx-2 cursor-pointer" style={{ fontSize: '0.9rem' }}>
                           <FiLink style={{ color: "white" }} />
                         </div>
