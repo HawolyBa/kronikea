@@ -26,7 +26,7 @@ const devConfig = {
 };
 
 const config = process.env.NODE_ENV === "production" ? prodConfig : devConfig;
-console.log(prodConfig)
+
 const app = initializeApp(config);
 const db = getFirestore(app)
 const auth = getAuth(app)
