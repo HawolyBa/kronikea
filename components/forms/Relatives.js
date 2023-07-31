@@ -74,8 +74,6 @@ const Relatives = ({ character, characters, form, t, capitalize }) => {
     });
   };
 
-  console.log(relations)
-
   return (
     <>
       <h3 className="dark:text-slate-50 text-lg capitalize">{t('form:relationships')}</h3>

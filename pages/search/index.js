@@ -69,7 +69,6 @@ const Explore = ({ stories, isLoading }) => {
 
   React.useEffect(() => {
     index.search('test').then(({ hits }) => {
-      console.log(hits);
     });
   }, [])
 

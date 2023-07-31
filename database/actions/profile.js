@@ -245,7 +245,6 @@ export const followUser = async (id, username, userImage) => {
         const userRef = await transaction.get(doc(db, "users", id))
         if (userRef.exists()) {
           const isFavorite = userRef.data().likedBy.includes(auth.currentUser.uid)
-          console.log(id, username)
           if (isFavorite) {
             const likeRef = await getDocs(query(collection(db, "usersLikes"), where("recipient", "==", id), where('senderId', '==', auth.currentUser.uid)))
             likeRef.forEach((like) => transaction.delete(like.ref))

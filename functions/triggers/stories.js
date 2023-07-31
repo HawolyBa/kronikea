@@ -142,8 +142,6 @@ exports.chapterUpdated = (change) => {
             .characters.filter((c) => !doc.data().mainCharacters.includes(c));
           // reste des persos après différence original et new
           let newArr = change.before.data().status === 'published' && change.after.data().status === 'published' ? arr_diff(originArr, charInChapter) : charInChapter;
-
-          console.log('newArr', newArr)
           // 
           newArr.forEach((char) => {
             // Vérifie s'ils sont déjà dans l'array secondary

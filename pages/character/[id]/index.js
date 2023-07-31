@@ -86,7 +86,7 @@ const Character = (props) => {
       push('/unauthorized')
     }
   }, [data, auth, isLoading])
-  console.log(props)
+
   return (
     <>
       <Head>
