@@ -64,7 +64,7 @@ const Profile = (props) => {
   const changePassword = (values) => {
     auth.changePassword(values.oldPassword, values.newPassword)
   }
-  console.log(data)
+
   const submit = async (values) => {
     if (((router.query.id === auth?.user.uid) || !router.query.id)) {
       await changeProfile({ data: { ...values, username: values.username ? values.username : newData.username ? newData.username : profile?.username }, id: auth.user.uid, form })
@@ -108,7 +108,7 @@ const Profile = (props) => {
                       </SocialButtons>}
                       <Tooltip placement='bottom' title={"Copy my link"}>
                         <div onClick={() => {
-                          navigator.clipboard.writeText(`https`)
+                          navigator.clipboard.writeText(`https://kronikea.com/${data?.profile?.id}`)
                         }} className="active:scale-95 transition duration-200 ease-in-out w-6 h-6 flex items-center justify-center rounded-md drop-shadow-xl mx-2 cursor-pointer" style={{ fontSize: '0.9rem' }}>
                           <FiLink style={{ color: "white" }} />
                         </div>
