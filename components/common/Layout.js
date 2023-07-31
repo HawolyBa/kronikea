@@ -1,4 +1,6 @@
 import React from 'react'
+import Head from 'next/head';
+import Script from 'next/script';
 import { notification } from 'antd';
 import CookieConsent from "react-cookie-consent";
 import { useTranslation } from 'next-i18next'
@@ -6,6 +8,7 @@ import { useTranslation } from 'next-i18next'
 import { useNotifcations } from '../../database/notifications';
 import Header from './Header';
 import Footer from './Footer';
+
 
 const Layout = ({ children, darkTheme, setDarkTheme }) => {
   const { t } = useTranslation()
@@ -63,27 +66,49 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
   }, [notifications, currentNotification])
 
   return (
-    <div className={`layout ${darkTheme ? 'dark' : ''}`}>
-      <Header setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
-      <div className='relative'>
-        {contextHolder}
-        {children}
-      </div>
-      <Footer />
-      <CookieConsent
-        location="bottom"
-        buttonText={t('common:accept')}
-        cookieName="myAwesomeCookieName2"
-        style={{ background: "#222" }}
-        buttonStyle={{
-          background: "#27746c", color: "#eee", fontSize: "13px"
-        }}
-        expires={150}
-      >
-        {t('common:cookies')}{" "}
+    <>
+      <Script data-ad-client="ca-pub-2847418034592467" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></Script>
+      <Script strategy='lazyOnload' src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" />
+      <Script strategy='lazyOnload' dangerouslySetInnerHTML={{
+        __html:
+          `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-      </CookieConsent>
-    </div>
+          gtag('config', 'G-MPXV4K7DRX');
+        `
+      }} />
+      {/* <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" />
+        <script
+          
+        />
+        
+      </Head> */}
+
+      <div className={`layout ${darkTheme ? 'dark' : ''}`}>
+        <Header setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
+        <div className='relative'>
+          {contextHolder}
+          {children}
+        </div>
+        <Footer />
+        <CookieConsent
+          location="bottom"
+          buttonText={t('common:accept')}
+          cookieName="myAwesomeCookieName2"
+          style={{ background: "#222" }}
+          buttonStyle={{
+            background: "#27746c", color: "#eee", fontSize: "13px"
+          }}
+          expires={150}
+        >
+          {t('common:cookies')}{" "}
+
+        </CookieConsent>
+      </div>
+    </>
   );
 }
 
