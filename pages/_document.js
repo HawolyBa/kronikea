@@ -11,6 +11,20 @@ export default function Document() {
           strategy="lazyOnload"
           crossOrigin="anonymous"
         />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" strategy="lazyOnload" />
+        <Script
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html:
+              `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-MPXV4K7DRX');
+        `
+          }}
+        />
       </Head>
       <body>
         <Main />
