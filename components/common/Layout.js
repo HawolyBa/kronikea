@@ -81,7 +81,6 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
         `
           }}
         />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2847418034592467" ></script>
       </Head>
 
       <div className={`layout ${darkTheme ? 'dark' : ''}`}>
