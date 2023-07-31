@@ -85,7 +85,6 @@ const Profile = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-
         <Spin spinning={!userExists || auth.isLoading || isLoading}>
           <div className="md:px-4 mx-auto max-w-screen-xl" id="profile">
             <section className={`md:mt-6 relative`}>
@@ -108,7 +107,7 @@ const Profile = (props) => {
                       </SocialButtons>}
                       <Tooltip placement='bottom' title={"Copy my link"}>
                         <div onClick={() => {
-                          navigator.clipboard.writeText(`https://www.kronikea.com/${auth?.user.uid}`)
+                          navigator.clipboard.writeText(`https://www.kronikea.com/${data?.profile?.id}`)
                         }} className="active:scale-95 transition duration-200 ease-in-out w-6 h-6 flex items-center justify-center rounded-md drop-shadow-xl mx-2 cursor-pointer" style={{ fontSize: '0.9rem' }}>
                           <FiLink style={{ color: "white" }} />
                         </div>
