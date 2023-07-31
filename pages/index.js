@@ -40,9 +40,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-MPXV4K7DRX', {
-            path_page: window.location.pathname
-          });
+          gtag('config', 'G-MPXV4K7DRX');
         `
           }}
         />
