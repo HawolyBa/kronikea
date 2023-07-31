@@ -89,7 +89,7 @@ const MyFeed = () => {
                     <div className="grid gap-5 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
                       {data?.users?.map(user => (
                         <Tooltip key={user.id} placement="bottom" title={user.username}>
-                          <Link href={user.id}>
+                          <Link href={`/profile/${user.id}`}>
                             <div className="w-10 h-10">
                               <img className='w-full h-full object-cover rounded-full' src={user.image ? user.image : placeholders.avatar} />
                             </div>
