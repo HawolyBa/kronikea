@@ -1,5 +1,4 @@
 import React from 'react'
-import Script from 'next/script'
 import { notification } from 'antd';
 import CookieConsent from "react-cookie-consent";
 import { useTranslation } from 'next-i18next'
@@ -84,16 +83,6 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
         {t('common:cookies')}{" "}
 
       </CookieConsent>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-MPXV4K7DRX');
-        `}
-      </Script>
     </div>
   );
 }
