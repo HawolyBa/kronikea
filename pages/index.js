@@ -44,9 +44,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
         `
           }}
         />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2847418034592467" crossorigin="anonymous">
 
-        </script>
       </Head>
       <Spin spinning={auth.isLoading || isLoading}>
         <main className="home max-w-screen-xl mx-auto py-8 px-4">
