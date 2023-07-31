@@ -13,6 +13,7 @@ export default function Document() {
         />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-MPXV4K7DRX" strategy="lazyOnload" />
         <Script
+          id="gtm-script"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html:
