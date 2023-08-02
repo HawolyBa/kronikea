@@ -30,9 +30,12 @@ const MyApp = ({ Component, pageProps }) => {
   const { locale, events } = useRouter()
 
   const [loading, setLoading] = React.useState(false);
+
   React.useEffect(() => {
     setDarkTheme(typeof window !== 'undefined' && localStorage.getItem('darkTheme') ? JSON.parse(localStorage.getItem('darkTheme')) : false);
+  }, []);
 
+  React.useEffect(() => {
     const start = () => {
       setLoading(true);
     };
@@ -47,7 +50,7 @@ const MyApp = ({ Component, pageProps }) => {
       events.off("routeChangeComplete", end);
       events.off("routeChangeError", end);
     };
-  }, []);
+  }, [events]);
 
   React.useEffect(() => {
     darkTheme ? document.body.classList.add("bg-zinc-800") : document.body.classList.remove("bg-zinc-800")

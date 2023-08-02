@@ -29,10 +29,12 @@ const Authentication = () => {
   const onFinishFailed = values => console.log('Failed:', values)
 
   React.useEffect(() => {
-    form.resetFields()
+    const thisForm = form
+    thisForm.resetFields()
   }, [router.pathname])
 
   React.useEffect(() => {
+    const thisRouter = router
     if (!auth.isLoading) {
       if (auth.user) {
         if (auth.user.emailVerified) {
@@ -40,7 +42,7 @@ const Authentication = () => {
             router.push('/for-you')
           }, 200)
         } else {
-          router.push('/auth/verify')
+          thisRouter.push('/auth/verify')
         }
       }
     }
@@ -171,12 +173,12 @@ const Authentication = () => {
 
                 {/* OVERLAY 1 */}
                 <div style={{ transform: active ? 'translateX(0)' : 'translateX(-20%)' }} className="absolute flex items-center justify-center flex-col px-8 text-center top-0 h-full w-1/2 transiton ease-in-out duration-1000 ">
-                  <img src={illus.src} />
+                  <Image width="300" height="300" src={illus.src} alt="image Kronikea" />
                   <p onClick={() => setActive(!active)} className="mt-6 text-center cursor-pointer">{t('auth:already-account')}</p>
                 </div>
                 {/* OVERLAY 2*/}
                 <div style={{ transform: active ? 'translateX(20%)' : 'translateX(0)' }} className={`absolute flex items-center justify-center flex-col px-8 text-center top-0 h-full w-1/2 transiton duration-1000 ease-in-out right-0`}>
-                  <img src={illus.src} />
+                  <Image width="300" height="300" src={illus.src} alt="image Kronikea" />
                   <p onClick={() => setActive(!active)} className="mt-6 text-center cursor-pointer">{t('auth:no-account-yet')}</p>
                 </div>
               </div>

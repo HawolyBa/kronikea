@@ -19,9 +19,10 @@ const ForgotPassword = () => {
   const [error, setError] = React.useState('')
 
   React.useEffect(() => {
+    const pushRoute = push
     if (!auth.isLoading) {
       if (auth.user) {
-        push('/profile')
+        pushRoute('/profile')
       }
     }
   }, [auth])

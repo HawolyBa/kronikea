@@ -15,13 +15,14 @@ const Verify = () => {
   const { push } = useRouter()
 
   React.useEffect(() => {
+    const routerPush = push
     if (!auth.isLoading) {
       if (auth.user) {
         if (auth.user.emailVerified) {
-          push('/profile')
+          routerPush('/profile')
         }
       } else {
-        push('/auth')
+        routerPush('/auth')
       }
     }
   }, [auth])
