@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaEye, FaStar } from 'react-icons/fa'
 import { ArrowRightOutlined } from '@ant-design/icons'
 import { A11y } from 'swiper';
@@ -51,10 +52,11 @@ const Slider = ({ data, t }) => {
             <NextButton />
             <PrevButton />
             {data && data.map(slide => (
-              <SwiperSlide key={slide.id} style={{ height: "100%" }}>
-                <div className="bg-center bg-cover w-full h-full" style={{ backgroundImage: `linear-gradient(113deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 100%),url(${data && data[currentSlide].banner})` }}>
-                  <TripleCard prev={data[currentSlide - 1 >= 0 ? currentSlide - 1 : data.length - 1]} slide={slide} next={data[currentSlide + 1 > data.length - 1 ? 0 : currentSlide + 1]} />
+              <SwiperSlide key={slide.id} style={{ height: "100%", position: 'relative' }}>
+                <div className='z-10 absolute w-full h-full' style={{ background: `linear-gradient(113deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 100%)` }}>
                 </div>
+                <Image src={data && data[currentSlide].banner} alt={data[currentSlide].title} fill style={{ objectFit: 'cover', zIndex: 0 }} />
+                <TripleCard prev={data[currentSlide - 1 >= 0 ? currentSlide - 1 : data.length - 1]} slide={slide} next={data[currentSlide + 1 > data.length - 1 ? 0 : currentSlide + 1]} />
               </SwiperSlide>
             ))}
           </Swiper>
