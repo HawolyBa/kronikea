@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { skipToken } from '@reduxjs/toolkit/dist/query';
@@ -91,7 +92,7 @@ const MyFeed = () => {
                         <Tooltip key={user.id} placement="bottom" title={user.username}>
                           <Link href={`/profile/${user.id}`}>
                             <div className="w-10 h-10">
-                              <img className='w-full h-full object-cover rounded-full' src={user.image ? user.image : placeholders.avatar} />
+                              <Image src={user.image ? user.image : placeholders.avatar} alt={user.username} fill style={{ objectFit: 'cover' }} />
                             </div>
                           </Link>
                         </Tooltip>

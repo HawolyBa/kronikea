@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { default as Img } from 'next/image'
 import nookies from 'nookies'
 import { useRouter } from 'next/router';
 import { Image, Divider, Tabs, Spin, Empty, Tooltip, Badge } from 'antd';
@@ -120,7 +121,7 @@ const Character = (props) => {
             <section className="bg-slate-50 -mb-32 md:mb-0 dark:bg-zinc-800 relative md:top-0 -top-8 md:rounded-none rounded-3xl h-fit w-full flex flex-col md:flex-row md:items-start items-center">
               <div className="md:w-80 w-full md:ml-12 lg:ml-24 h-full relative flex items-center justify-center">
                 <div className="w-full flex items-center justify-center -top-28 relative md:absolute flex-col ">
-                  <div className={`poster mb-5 before:bg-slate-50 before:dark:bg-zinc-800 before:absolute before:content-[''] before:rounded-lg before:shadow-lg flex items-center justify-center rounded-lg`}>
+                  <div className={`poster mb-5 before:bg-slate-50 before:dark:bg-zinc-800 before:absolute before:content-[''] before:rounded-lg before:shadow-lg flex items-center justify-center rounded-lg z-20`}>
                     <Image
                       width={"100%"}
                       height={"100%"}
@@ -158,7 +159,7 @@ const Character = (props) => {
                   <Link href={`/profile/${data?.character?.authorId}`}>
                     <div className='flex items-center cursor-pointer'>
                       <div className="mr-2 author-avatar rounded-full w-8 h-8 overflow-hidden relative">
-                        <img src={data?.character?.userImage ? data?.character?.userImage : placeholders.avatar} className="h-full w-full object-cover" alt={data?.character?.authorName} />
+                        <Img src={data?.character?.userImage ? data?.character?.userImage : placeholders.avatar} alt={data?.character?.authorName} fill style={{ objectFit: 'cover' }} />
                       </div>
                       <span className="text-zinc-900 dark:text-slate-50">{data?.character?.authorName}</span>
                     </div>

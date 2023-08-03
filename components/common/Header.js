@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
+import Image from 'next/image';
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { Divider, Drawer, Tooltip } from 'antd'
@@ -66,7 +67,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                                     <Create t={t} />
                                     <ContextMenu locale={locale} type="user" auth={auth} t={t} changeLanguage={changeLanguage} darkTheme={darkTheme} changeTheme={changeTheme}>
                                         <div className='hover:scale-105 transition duration-200 ease-in-out cursor-pointer rounded-full shadow-md mx-2 overflow-hidden h-8 w-8'>
-                                            <img src={auth.user.image ? auth.user.image : placeholders.avatar} alt={auth.user.username} className="w-full h-full object-cover" />
+                                            <Image src={auth.user.image ? auth.user.image : placeholders.avatar} alt={auth.user.username} fill style={{ objectFit: 'cover' }} />
                                         </div>
                                     </ContextMenu>
                                     <NotificationsMenu />

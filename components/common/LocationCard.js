@@ -1,4 +1,4 @@
-// import Image from 'next/image'
+import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
 import { Modal, Button } from 'antd'
@@ -14,8 +14,7 @@ const LocationCard = ({ data }) => {
     <>
       <figure onClick={() => setVisible(true)} className='hover:scale-105 transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-md min-w-36 w-full max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg'>
         <div className='after-border after:absolute after:border after:content-[""] after:bg-transparent after:z-50 after:rounded-md w-full h-36 rounded-md overflow-hidden relative after:dark:border-zinc-900'>
-          {/* <Image layout='fill' objectFit='cover' src={data.image ? data.image : placeholders.card} alt={data.name} /> */}
-          <img className="w-full h-full object-cover" src={data.image ? data.image : placeholders.card} alt={data.name} />
+          <Image fill style={{ objectFit: 'cover' }} src={data.image ? data.image : placeholders.card} alt={data.name} />
         </div>
         <figcaption className='py-2'>
           <h3 className="uppercase text-center text-xs">{data.name}</h3>
@@ -35,7 +34,7 @@ const LocationCard = ({ data }) => {
       >
         <figure onClick={() => setVisible(true)} className='w-full flex flex-col items-center text-zinc-900 dark:text-slate-100'>
           <div className='w-full h-96 rounded-xl overflow-hidden relative'>
-            <img className="w-full h-full object-cover" src={data.image ? data.image : placeholders.card} alt={data.name} />
+            <Image fill style={{ objectFit: 'cover' }} src={data.image ? data.image : placeholders.card} alt={data.name} />
           </div>
           <figcaption className='text-center py-2'>
             <h3 className="card__title mt-2">{data.name}</h3>

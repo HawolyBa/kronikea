@@ -13,8 +13,7 @@ const StoryCard = ({ story, type }) => {
 
       <div className="w-full story-card relative cursor-pointer hover:shadow-lg ease-linear duration-75 h-fit-content my-4 ">
         <div className="poster w-36 h-full absolute bottom-0 left-0 relative">
-          {/* <Image layout='fill' objectFit='cover' src={story.image ? story.image : placeholders.card} alt={story.title} /> */}
-          <img className="w-full h-full object-cover" src={story.image ? story.image : placeholders.card} alt={story.title} />
+          <Image fill src={story.image ? story.image : placeholders.card} alt={story.title} style={{ objectFit: 'cover' }} />
         </div>
         <div className="ml-40 pt-2 pb-3">
           <h3 className='text-lg'>{story.title}</h3>

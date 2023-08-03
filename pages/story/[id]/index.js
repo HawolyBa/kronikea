@@ -68,7 +68,7 @@ const Story = ({ isLoading, data, storyExists }) => {
           {/* TOP DETAILS */}
           <div className='md:max-w-screen-xl w-full md:px-4 mx-auto md:mt-6 '>
             <Banner image={data?.story?.banner}>
-              <div className="w-full flex md:items-center items-start md:justify-end md:pr-8 lg:pr-24 h-full overflow-hidden rounded-3xl">
+              <div className="w-full flex md:items-center items-start md:justify-end md:pr-8 lg:pr-24 h-full overflow-hidden rounded-3xl z-20">
                 <div className="w-full flex items-center md:justify-end justify-between px-8 py-6 md:py-0">
                   <div className="flex items-center">
                     <div className="rounded-full text-white bg-primary p-2 mr-3">
@@ -88,7 +88,7 @@ const Story = ({ isLoading, data, storyExists }) => {
             <section className="bg-slate-50 -mb-32 md:mb-0 dark:bg-zinc-800 relative md:top-0 -top-8 rounded-3xl h-fit w-full flex flex-col md:flex-row md:items-start items-center">
               <div className="md:w-80 w-full md:ml-12 lg:ml-24 h-full relative flex items-center justify-center">
                 <div className="w-full flex items-center justify-center -top-28 relative md:absolute flex-col">
-                  <div className={`poster mb-5 before:bg-slate-50 before:dark:bg-zinc-800 before:absolute before:content-[''] before:rounded-lg before:shadow-lg flex items-center justify-center rounded-lg`}>
+                  <div className={`poster mb-5 before:bg-slate-50 before:dark:bg-zinc-800 before:absolute before:content-[''] before:rounded-lg before:shadow-lg flex items-center justify-center rounded-lg z-20`}>
                     <Image
                       width={"100%"}
                       height={"100%"}
@@ -129,7 +129,7 @@ const Story = ({ isLoading, data, storyExists }) => {
                   <Link href={`/profile/${data?.story?.authorId}`}>
                     <div className='flex items-center cursor-pointer'>
                       <div className="mr-2 author-avatar rounded-full w-8 h-8 overflow-hidden relative">
-                        <img src={data?.story?.userImage ? data?.story?.userImage : placeholders.avatar} className="w-full h-full object-cover" alt={data?.story?.authorName} />
+                        <Img src={data?.story?.userImage ? data?.story?.userImage : placeholders.avatar} alt={data?.story?.authorName} fill style={{ objectFit: 'cover' }} />
                       </div>
                       <span className="text-zinc-900 dark:text-slate-50">{data?.story?.authorName}</span>
                     </div>
@@ -237,7 +237,7 @@ const Story = ({ isLoading, data, storyExists }) => {
                         <Link href={`/profile/${data?.story?.authorId}`}>
                           <div className='flex items-center cursor-pointer'>
                             <div className="mr-2 author-avatar rounded-full w-8 h-8 overflow-hidden relative">
-                              <img src={data?.story?.authorImage ? data?.story.authorImage : placeholders.avatar} className="w-full h-full object-cover" alt={data?.story?.authorName} />
+                              <Img alt={data?.story?.authorName} src={data?.story?.authorImage ? data?.story.authorImage : placeholders.avatar} fill style={{ objectFit: 'cover' }} />
                             </div>
                             <span className="text-zinc-900 dark:text-slate-50">{data?.story?.authorName}</span>
                           </div>

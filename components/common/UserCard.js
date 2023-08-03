@@ -10,7 +10,7 @@ const UserCard = ({ data, show }) => {
         </div>
         <div className="relative dark:bg-zinc-900 bg-white pb-3 shadow-md">
           <div className="user-card-avatar rounded-full absolute left-4 -top-8 flex items-center before:absolute before:content-[''] before:rounded-full before:dark:bg-zinc-900 before:shadow-lg justify-center before:bg-slate-50">
-            <img src={data?.image ? data?.image : placeholders.avatar} alt={data?.username} className="rounded-full w-full h-full object-cover z-10" />
+            <Image fill style={{ objectFit: 'cover' }} src={data?.image ? data?.image : placeholders.avatar} alt={data?.username} />
           </div>
           <div className="pl-24 pt-2 px-2">
             <h2 className="text-zinc-800 dark:text-slate-50 uppercase text-xs">{data?.username}</h2>
