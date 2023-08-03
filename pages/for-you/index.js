@@ -91,7 +91,7 @@ const MyFeed = () => {
                       {data?.users?.map(user => (
                         <Tooltip key={user.id} placement="bottom" title={user.username}>
                           <Link href={`/profile/${user.id}`}>
-                            <div className="w-10 h-10">
+                            <div className="w-10 h-10 rounded-full overflow-hidden relative">
                               <Image src={user.image ? user.image : placeholders.avatar} alt={user.username} fill style={{ objectFit: 'cover' }} />
                             </div>
                           </Link>

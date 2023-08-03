@@ -66,7 +66,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                                 <>
                                     <Create t={t} />
                                     <ContextMenu locale={locale} type="user" auth={auth} t={t} changeLanguage={changeLanguage} darkTheme={darkTheme} changeTheme={changeTheme}>
-                                        <div className='hover:scale-105 transition duration-200 ease-in-out cursor-pointer rounded-full shadow-md mx-2 overflow-hidden h-8 w-8'>
+                                        <div className='hover:scale-105 transition duration-200 ease-in-out cursor-pointer rounded-full shadow-md mx-2 overflow-hidden h-8 w-8 relative'>
                                             <Image src={auth.user.image ? auth.user.image : placeholders.avatar} alt={auth.user.username} fill style={{ objectFit: 'cover' }} />
                                         </div>
                                     </ContextMenu>
