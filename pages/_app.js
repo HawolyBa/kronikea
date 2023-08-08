@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head'
 import 'draft-js/dist/Draft.css';
 import '../style/tailwind.css'
 import 'antd/dist/reset.css';
@@ -9,6 +10,7 @@ import frFR from 'antd/locale/fr_FR';
 import enGB from 'antd/locale/en_GB';
 import { appWithTranslation } from 'next-i18next';
 import { Provider } from 'react-redux';
+import icon from '../images/logo-kronikea.png'
 
 import { ProvideAuth } from '../database/auth'
 import { store } from '../database/rtkStore'
@@ -60,21 +62,31 @@ const MyApp = ({ Component, pageProps }) => {
   }, [darkTheme])
 
   return (
-    <Provider store={store}>
-      <ProvideAuth>
-        <ProvideNotification>
-          <ConfigProvider locale={locale === "fr" ? frFR : enGB} theme={{
-            token: {
-              colorPrimary: '#27746c',
-            },
-          }}>
-            <Layout darkTheme={darkTheme} setDarkTheme={setDarkTheme}>
-              <Component isLoading={loading} darkTheme={darkTheme} {...pageProps} />
-            </Layout>
-          </ConfigProvider>
-        </ProvideNotification>
-      </ProvideAuth>
-    </Provider>
+    <>
+      <Head>
+        <link
+          rel="icon"
+          href={icon}
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </Head>
+      <Provider store={store}>
+        <ProvideAuth>
+          <ProvideNotification>
+            <ConfigProvider locale={locale === "fr" ? frFR : enGB} theme={{
+              token: {
+                colorPrimary: '#27746c',
+              },
+            }}>
+              <Layout darkTheme={darkTheme} setDarkTheme={setDarkTheme}>
+                <Component isLoading={loading} darkTheme={darkTheme} {...pageProps} />
+              </Layout>
+            </ConfigProvider>
+          </ProvideNotification>
+        </ProvideAuth>
+      </Provider>
+    </>
   )
 }
 

@@ -11,6 +11,7 @@ import { IconContext } from "react-icons";
 import { BiSearchAlt, BiDotsVerticalRounded } from "react-icons/bi";
 
 import { useAuth } from '../../database/auth'
+import logo from '../../images/logo-kronikea.png'
 
 import Search from './Search';
 import SocialButtons from '../header/SocialButtons'
@@ -40,8 +41,9 @@ const Header = ({ setDarkTheme, darkTheme }) => {
             <header id="main-header" className="top-0 left-0 w-full sticky main__header dark:text-white text-zinc-900 bg-white dark:bg-zinc-900 z-50">
                 <div className='max-w-screen-xl mx-auto flex items-center justify-between h-full'>
                     <div className='pl-6 flex items-center'>
-                        <Link href='/'>
-                            <h1 className="main_title text-lg cursor-pointer">Kronikea</h1>
+                        <Link href='/' className="flex items-center">
+                            <Image src={logo.src} width={30} height={30} />
+                            <h1 className="ml-2 main_title text-lg cursor-pointer">Kronikea</h1>
                         </Link>
                         <nav className="ml-8 mt-1 md:block hidden">
                             <ul className="flex items-center">
