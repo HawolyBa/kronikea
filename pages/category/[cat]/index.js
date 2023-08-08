@@ -79,7 +79,7 @@ const Category = ({ stories }) => {
       <div className='archive custom__archive w-full'>
         <div className="max-w-screen-xl pb-8 md:py-8 md:px-8 md:px-4 mx-auto">
           <Banner image={category.image.src}>
-            <div className="flex h-full w-full justify-center md:justify-between md:flex-row flex-col md:ml-24 items-center">
+            <div className="flex h-full w-full justify-center md:justify-between md:flex-row flex-col md:ml-24 items-center z-20">
               <div>
                 <h2 className="text-3xl font-bold text-slate-50 capitalize">{t('common:category')}: {t(`common:${router.query.cat.toLowerCase()}`)}</h2>
                 <h3 className=" text-2xl">{data.length} {data.length > 1 ? t('common:stories') : t('common:story')}</h3>
