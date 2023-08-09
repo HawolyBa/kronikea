@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head'
 import 'draft-js/dist/Draft.css';
 import '../style/tailwind.css'
 import 'antd/dist/reset.css';
@@ -63,14 +62,6 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <>
-      <Head>
-        <link
-          rel="icon"
-          href={icon}
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-      </Head>
       <Provider store={store}>
         <ProvideAuth>
           <ProvideNotification>
