@@ -9,7 +9,6 @@ import frFR from 'antd/locale/fr_FR';
 import enGB from 'antd/locale/en_GB';
 import { appWithTranslation } from 'next-i18next';
 import { Provider } from 'react-redux';
-import icon from '../images/logo-kronikea.png'
 
 import { ProvideAuth } from '../database/auth'
 import { store } from '../database/rtkStore'

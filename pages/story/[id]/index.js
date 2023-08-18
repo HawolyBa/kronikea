@@ -237,7 +237,7 @@ const Story = ({ isLoading, data, storyExists }) => {
                         <Link href={`/profile/${data?.story?.authorId}`}>
                           <div className='flex items-center cursor-pointer'>
                             <div className="mr-2 author-avatar rounded-full w-8 h-8 overflow-hidden relative">
-                              <Img alt={data?.story?.authorName} src={data?.story?.authorImage ? data?.story.authorImage : placeholders.avatar} fill style={{ objectFit: 'cover' }} />
+                              <Img alt={data?.story?.authorName} src={data?.story?.userImage ? data?.story?.userImage : placeholders.avatar} fill style={{ objectFit: 'cover' }} />
                             </div>
                             <span className="text-zinc-900 dark:text-slate-50">{data?.story?.authorName}</span>
                           </div>
