@@ -43,7 +43,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                     <div className='md:pl-6 pl-2 flex items-center'>
                         <Link href='/' className="flex items-center">
                             <Image src={logo.src} width={30} height={30} />
-                            <h1 className="ml-2 main_title uppercase text-lg cursor-pointer">Kronikea</h1>
+                            <h1 className="ml-2 main_title uppercase text-sm md:text-lg cursor-pointer">Kronikea</h1>
                         </Link>
                         <nav className="ml-8 mt-1 md:block hidden">
                             <ul className="flex items-center">
@@ -77,7 +77,8 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                                 <>
                                     <Divider type='vertical' />
                                     <Link className="active:scale-95 flex items-center font-light capitalize rounded-lg px-3 h-8 text-center mr-3 text-xs text-white" style={{ background: colors.primary }} href="/auth">
-                                        {t('common:join-button')}
+                                        {/* {t('common:join-button')} */}
+                                        Connexion
                                     </Link>
                                     <ContextMenu locale={locale} type="invite" auth={auth} t={t} changeLanguage={changeLanguage} darkTheme={darkTheme} changeTheme={changeTheme}>
                                         <div className='cursor-pointer'>
