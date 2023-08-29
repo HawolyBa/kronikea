@@ -54,7 +54,7 @@ const Authentication = () => {
         <title>{t('common:login').charAt(0).toUpperCase() + t('common:login').slice(1)} - Kronikea</title>
       </Head>
       <Spin spinning={auth.isLoading || auth.user}>
-        <div className="auth mt-8 px-4 h-full mb-8">
+        <div className="auth mt-8 px-4 h-full mb-8 pb-16">
           <div className={`max-w-screen-lg w-screen-lg bg-white dark:bg-zinc-900 shadow-lg rounded-2xl w-full mx-auto flex relative overflow-hidden ${active ? 'active' : ''}`}>
             {/* SIGN IN */}
             <div className={`sign-in md:w-1/2 w-full h-full absolute top-0 transiton duration-1000 ease-in-out left-0 z-20 ${active ? 'md:translate-x-full ' : ''}`}>
@@ -108,7 +108,7 @@ const Authentication = () => {
                   <Image src={bookGirl.src} style={{ objectFit: 'cover' }} alt="logo Kronikea" fill />
                 </div>
                 <h2 className="text-3xl text-center tracking-widest capitalize">{t('common:sign-up')}</h2>
-                <p className="w-full mx-auto mt-3 mb-8 font-lighter text-xs text-gray-400 text-center">{t('auth:greeting-auth')}</p>
+                <p className="w-full mx-auto mt-3 font-lighter text-xs text-gray-400 text-center">{t('auth:greeting-auth')}</p>
                 <Form
                   layout='vertical'
                   style={{ maxWidth: "100%" }}
@@ -158,11 +158,11 @@ const Authentication = () => {
                     <Input.Password placeholder={t('auth:confirm-password')} />
                   </Form.Item>
                   <button type="submit" style={{ background: colors.primary }} className="rounded-sm w-full text-white py-2 mt-8 capitalize active:scale-90 transform duration-1000 tracking-widest">{t('common:login')}</button>
-                  <button type='button' style={{ border: `1px solid ${colors.primary}` }} className="flex items-center justify-center rounded-sm w-full py-2 mt-3 active:scale-90 transform duration-1000 tracking-widest" onClick={() => auth.signInWithGoogle()}>
+                  <button type='button' style={{ border: `1px solid ${colors.primary}` }} className="flex items-center justify-center rounded-sm w-full py-2 mt-3 active:scale-90 transform duration-1000 tracking-widest " onClick={() => auth.signInWithGoogle()}>
                     <FcGoogle style={{ fontSize: '1.5rem' }} />
                     <span className="ml-2 dark:text-slate-50 capitalize">{t('auth:signup-google')}</span>
                   </button>
-                  <p onClick={() => setActive(!active)} className="md:hidden mt-6 text-center cursor-pointer dark:text-slate-50">{t('auth:already-account')}</p>
+                  <p onClick={() => setActive(!active)} className="md:hidden mt-4 text-center cursor-pointer dark:text-slate-50">{t('auth:already-account')}</p>
                 </Form>
               </div>
             </div>

@@ -39,7 +39,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
     return (
         <>
             <header id="main-header" className="top-0 left-0 w-full sticky main__header dark:text-white text-zinc-900 bg-white dark:bg-zinc-900 z-50">
-                <div className='md:max-w-screen-xl mx-auto flex items-center justify-between h-full'>
+                <div className='md:max-w-screen-xl mx-auto flex items-center justify-between w-full h-full'>
                     <div className='md:pl-6 pl-2 flex items-center'>
                         <Link href='/' className="flex items-center">
                             <Image src={logo.src} width={30} height={30} />
@@ -76,7 +76,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                                 </> :
                                 <>
                                     <Divider type='vertical' />
-                                    <Link className="active:scale-95 flex items-center font-light uppercase rounded-lg px-3 h-8 mr-3 text-xs text-white" style={{ background: colors.primary }} href="/auth">
+                                    <Link className="active:scale-95 flex items-center font-light capitalize rounded-lg px-3 h-8 text-center mr-3 text-xs text-white" style={{ background: colors.primary }} href="/auth">
                                         {t('common:join-button')}
                                     </Link>
                                     <ContextMenu locale={locale} type="invite" auth={auth} t={t} changeLanguage={changeLanguage} darkTheme={darkTheme} changeTheme={changeTheme}>

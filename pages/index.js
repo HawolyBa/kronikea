@@ -79,7 +79,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                 <Link href="/category/fantasy">{'See More >>'}</Link>
               </div>
             </section>
-            <div className="mt-12 ">
+            <div className="mt-12">
               <Divider orientation="left" plain className="dark:border-stone-700">
                 <h3 className="uppercase dark:text-zinc-50 font-light home__heading">{t('home:popular-characters')}</h3>
               </Divider>
