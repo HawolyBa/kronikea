@@ -75,7 +75,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                                     <NotificationsMenu />
                                 </> :
                                 <>
-                                    <Divider type='vertical' />
+                                    {/* <Divider type='vertical' /> */}
                                     <Link className="active:scale-95 flex items-center font-light capitalize rounded-lg px-3 h-8 text-center mr-3 text-xs text-white" style={{ background: colors.primary }} href="/auth">
                                         {/* {t('common:join-button')} */}
                                         Connexion
