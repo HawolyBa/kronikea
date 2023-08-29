@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Drawer, Tooltip } from 'antd'
 import { FiFacebook, FiTwitter, FiInstagram } from "react-icons/fi"
 import { MdModeNight } from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
 import { BsSunFill } from "react-icons/bs";
 
 import SocialButtons from '../header/SocialButtons'
@@ -16,7 +17,10 @@ const Menu = ({ t, darkTheme, changeTheme, activeCategories, setActiveCategories
     <Drawer
       placement="left"
       onClose={() => setActiveCategories(false)}
+      title="coucou"
       className="main-menu"
+      width={'90%'}
+      closeIcon={<AiOutlineClose />}
       open={activeCategories}
       rootStyle={{ zIndex: "9999999999999999999" }}
       headerStyle={{ background: darkTheme ? '#18181b' : "white" }}
