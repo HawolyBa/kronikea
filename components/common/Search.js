@@ -15,8 +15,8 @@ const Search = ({ activeSearch, setActiveSearch, t, push }) => {
   return (
 
     <div className={`main__search active-search`}>
-      <div className='h-12 w-12 overflow-hidden rounded-full relative mr-8'>
-        <Image src={bookLover.src} alt="logo" layout="fill" objectFit='contain' />
+      <div className='md:h-12 md:w-12 hidden md:block overflow-hidden rounded-full relative mr-8'>
+        <Image src={bookLover.src} alt="logo" fill style={{ objectFit: "cover" }} />
       </div>
       <div className="main__search__inner text-zinc-800">
         {/* <div className="main__search__inner__list px-2">

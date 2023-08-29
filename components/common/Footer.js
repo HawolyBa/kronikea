@@ -9,12 +9,12 @@ import logo from '../../images/search.png'
 const Footer = () => {
   const { t } = useTranslation()
   return (
-    <footer className="bg-white dark:bg-zinc-900 p-8">
+    <footer className="bg-white dark:bg-zinc-900 p-8 hidden md:block">
       <div className="max-w-screen-xl mx-auto">
         <div className="flex md:flex-row flex-col md:justify-between md:items-start items-center h-full">
           <div className="flex flex-col h-full items-center mb-6 md:mb-0">
             <div className='w-16 h-16 rounded-full overflow-hidden mb-4 relative'>
-              <Image layout="fill" src={logo.src} alt="logo Kronikea" />
+              <Image fill src={logo.src} alt="logo Kronikea" />
             </div>
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 capitalize">© 2023 <a href="https://flowbite.com/" className="hover:underline">Kronikea™</a>. {t('common:all-rights')}.
             </span>

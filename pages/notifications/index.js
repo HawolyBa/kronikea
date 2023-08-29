@@ -94,7 +94,7 @@ const Notifications = ({ isLoading }) => {
       <Head>
         <title>{notifications?.items.filter(i => !i.read).length > 0 ? `(${notifications?.items.filter(i => !i.read).length})` : ''} Notifications - Kronikea</title>
       </Head>
-      <div className='p-8'>
+      <div className='md:p-8 md:mt-0 mt-4'>
         <div className="bg-white dark:bg-zinc-900 rounded-xl max-w-screen-lg py-8 md:px-12 px-4 mx-auto min-h-screen">
           <Spin spinning={auth.isLoading || !auth.user || isLoading || notifications.isLoading}>
             <h2 className="text-xl uppercase">Notifications</h2>

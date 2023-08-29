@@ -1,15 +1,20 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { Dropdown } from 'antd';
+import { Dropdown, Badge } from 'antd';
 import { BiUser, BiGlobe, BiSun, BiLogOutCircle, BiMoon } from 'react-icons/bi';
+import { FaBell } from 'react-icons/fa';
 import { WiMoonAltFirstQuarter } from 'react-icons/wi';
 import Flag from 'react-world-flags';
+
+import { useNotifcations } from '../../database/notifications';
 
 const ContextMenu = ({ children, darkTheme, changeTheme, changeLanguage, t, auth, type, locale }) => {
 
   // FIXME - DISABLE CURRENT LANGUAGE
 
   const { push } = useRouter()
+  const notifications = useNotifcations()
+
   const themes = [
     {
       label: t('common:dark'),
@@ -62,12 +67,19 @@ const ContextMenu = ({ children, darkTheme, changeTheme, changeLanguage, t, auth
       icon: <WiMoonAltFirstQuarter />,
       children: themes,
     },
+    ,
+    // (type === "user" && {
+    //   label: t('common:notifications'),
+    //   key: '4',
+    //   icon: <Badge count={notifications.items.filter(i => !i.read).length} size='small'><FaBell /></Badge>,
+    //   onClick: () => push('/notifications')
+    // }),
     (type === "user" && {
       label: t('common:logout'),
       key: '4',
       icon: <BiLogOutCircle />,
       onClick: () => auth.signout()
-    }),
+    })
   ];
 
   return (

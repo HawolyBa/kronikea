@@ -3,10 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image';
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
-import { Divider, Drawer, Tooltip } from 'antd'
+import { Divider, Drawer } from 'antd'
 import { FiFacebook, FiTwitter, FiInstagram, FiMenu } from "react-icons/fi"
-import { MdModeNight } from "react-icons/md";
-import { BsSunFill } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import { BiSearchAlt, BiDotsVerticalRounded } from "react-icons/bi";
 
@@ -16,9 +14,11 @@ import logo from '../../images/logo-kronikea.png'
 import Search from './Search';
 import SocialButtons from '../header/SocialButtons'
 import ContextMenu from '../header/ContextMenu'
-import { CATEGORIES, colors, placeholders } from '../../utils/constants'
+import { colors, placeholders } from '../../utils/constants'
 import Create from '../cta/Create';
 import NotificationsMenu from '../header/NotificationsMenu';
+import Menu from '../header/Menu';
+import BottomTabs from '../header/BottomTabs';
 
 const Header = ({ setDarkTheme, darkTheme }) => {
     const auth = useAuth()
@@ -39,11 +39,11 @@ const Header = ({ setDarkTheme, darkTheme }) => {
     return (
         <>
             <header id="main-header" className="top-0 left-0 w-full sticky main__header dark:text-white text-zinc-900 bg-white dark:bg-zinc-900 z-50">
-                <div className='max-w-screen-xl mx-auto flex items-center justify-between h-full'>
-                    <div className='pl-6 flex items-center'>
+                <div className='md:max-w-screen-xl mx-auto flex items-center justify-between h-full'>
+                    <div className='md:pl-6 pl-2 flex items-center'>
                         <Link href='/' className="flex items-center">
                             <Image src={logo.src} width={30} height={30} />
-                            <h1 className="ml-2 main_title text-lg cursor-pointer">Kronikea</h1>
+                            <h1 className="ml-2 main_title uppercase text-lg cursor-pointer">Kronikea</h1>
                         </Link>
                         <nav className="ml-8 mt-1 md:block hidden">
                             <ul className="flex items-center">
@@ -53,7 +53,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                                 <li className='capitalize'><Link href='/category'>{t('common:categories')}</Link></li>
                             </ul>
                         </nav>
-                        <div className="dark:text-white text-black menu-btn cursor-pointer ml-3" onClick={() => setActiveCategories(!activeCategories)}>
+                        <div className="dark:text-white text-black menu-btn cursor-pointer ml-3 hidden md:block" onClick={() => setActiveCategories(!activeCategories)}>
                             <IconContext.Provider value={{ size: "1.5em" }}>
                                 <FiMenu />
                             </IconContext.Provider>
@@ -61,7 +61,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                     </div>
                     <div className="flex items-center">
                         <div className="flex mr-3 items-center">
-                            <div onClick={() => setActiveSearch(!activeSearch)} style={{ backgroundColor: colors.secondary }} className='hover:scale-105 transition duration-200 ease-in-out cursor-pointer p-2 rounded-md shadow-md mx-2'>
+                            <div onClick={() => setActiveSearch(!activeSearch)} style={{ backgroundColor: colors.secondary }} className='hidden md:block hover:scale-105 transition duration-200 ease-in-out cursor-pointer p-2 rounded-md shadow-md mx-2'>
                                 <BiSearchAlt style={{ color: 'white' }} />
                             </div>
                             {auth.user ?
@@ -116,56 +116,19 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                 </div>
 
             </Drawer>
-            <Drawer
-                placement="left"
-                onClose={() => setActiveCategories(false)}
-                className="main-menu"
-                open={activeCategories}
-                rootStyle={{ zIndex: "9999999999999999999" }}
-                headerStyle={{ background: darkTheme ? '#18181b' : "white" }}
-                bodyStyle={{ background: darkTheme ? '#18181b' : "white" }}
-            >
-                <div className="">
-                    <Link href="/"><h4 onClick={() => setActiveCategories(false)} className='cursor-pointer md:hidden mb-6 mt-6 text-lg uppercase'>Home</h4></Link>
-                    <h4 className='mb-3 mt-6 text-lg uppercase'>Night Mode</h4>
-                    <div className='flex items-center'>
-                        <Tooltip placement='bottom' title={"Night mode"}>
-                            <div onClick={() => changeTheme(true)} className="mr-4 cursor-pointer hover:scale-105 transition duration-200 ease-in-out w-6 h-6 flex items-center justify-center rounded-md shadow-lg" style={{ fontSize: '1.2rem', border: `1 px solid ${colors.primary}` }}>
-                                <MdModeNight color={"black"} />
-                            </div>
-                        </Tooltip>
-                        <Tooltip placement='bottom' title={"Light mode"}>
-                            <div onClick={() => changeTheme(false)} className="cursor-pointer hover:scale-105 transition duration-200 ease-in-out w-6 h-6 flex items-center justify-center rounded-md shadow-lg" style={{ fontSize: '1.2rem', border: `1 px solid ${colors.primary}` }}>
-                                <BsSunFill color={"black"} />
-                            </div>
-                        </Tooltip>
-                    </div>
-                    <Link href="/category">
-                        <h4 onClick={() => setActiveCategories(false)} className='cursor-pointer mb-3 mt-6 text-lg uppercase'>Categories</h4>
-                    </Link>
-                    <ul>
-                        {CATEGORIES.map(cat => (
-                            <li className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`} key={cat.name} onClick={() => setActiveCategories(false)}>
-                                <Link href={`/category/${cat.name}`}>{t(`common:${cat.value}`)}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="md:hidden ">
-                        <h4 className='mt-6 mb-3 text-lg uppercase'>SOCIAL LINKS</h4>
-                        <div className='flex'>
-                            <SocialButtons title="Facebook">
-                                <FiFacebook />
-                            </SocialButtons>
-                            <SocialButtons title='Twitter'>
-                                <FiTwitter />
-                            </SocialButtons>
-                            <SocialButtons title="Instagram">
-                                <FiInstagram />
-                            </SocialButtons>
-                        </div>
-                    </div>
-                </div>
-            </Drawer>
+            <Menu
+                t={t}
+                darkTheme={darkTheme}
+                changeTheme={changeTheme}
+                activeCategories={activeCategories}
+                setActiveCategories={setActiveCategories}
+            />
+            <BottomTabs
+                setActiveSearch={setActiveSearch}
+                activeSearch={activeSearch}
+                setActiveCategories={setActiveCategories}
+                activeCategories={activeCategories}
+            />
         </>
     )
 }
