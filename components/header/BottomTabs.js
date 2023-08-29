@@ -11,8 +11,10 @@ const BottomTabs = ({ setActiveCategories, activeCategories, activeSearch, setAc
             <AiFillHome />
           </Link>
         </li>
-        <li className="text-2xl cursor-pointer" >
-          <AiOutlinePlus />
+        <li className="text-2xl cursor-pointer">
+          <Link href="/">
+            <AiOutlinePlus />
+          </Link>
         </li>
         <li className="text-2xl cursor-pointer" onClick={() => setActiveSearch(!activeSearch)}>
           <AiOutlineSearch />
