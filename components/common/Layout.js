@@ -75,7 +75,7 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
       <CookieConsent
         location="bottom"
         buttonText={t('common:accept')}
-        cookieName="myAwesomeCookieName2"
+        cookieName="kronikea-cookies"
         style={{ background: "#222" }}
         buttonStyle={{
           background: "#27746c", color: "#eee", fontSize: "13px"
