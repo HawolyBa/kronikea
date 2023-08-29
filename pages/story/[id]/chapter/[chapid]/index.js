@@ -162,8 +162,8 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
         <title>{`${t('chapter:chapter').charAt(0).toUpperCase() + t('chapter:chapter').slice(1)} ${data?.number}: ${data?.title}`} - Kronikea</title>
       </Head>
       <Spin spinning={!storyExists || auth?.isLoading || isLoading || (!data?.public && data?.authorId !== auth?.user?.uid) || data.status !== 'published'}>
-        <div className='chapter md:mt-6 px-4'>
-          <div className="max-w-screen-lg mx-auto">
+        <div className='chapter md:mt-6 md:px-4 mb-24'>
+          <div className="md:max-w-screen-lg w-full mx-auto">
             <Banner image={data?.image}>
               <div className="w-full flex items-center justify-center md:justify-end w-full h-full overflow-hidden rounded-3xl relative">
                 <div className="flex md:justify-start justify-center items-center md:w-2/3 w-full">
@@ -213,7 +213,7 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
               </div>
             </Banner>
           </div>
-          <div className="mx-auto max-w-screen-lg">
+          <div className="mx-auto px-2 md:px-0 max-w-screen-lg pb-8">
             <div className=" my-6 relative md:flex justify-between">
               {/* BARRE LATERALE */}
               <aside className="md:w-1/12 left-0 top-20 sticky bg-white dark:bg-zinc-900 md:py-8 py-2 md:h-96 h-fit rounded-xl shadow-md flex md:flex-col text-zinc-500 justify-center items-center text-2xl md:mb-0 mb-3 z-50">

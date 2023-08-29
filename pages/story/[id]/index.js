@@ -85,7 +85,7 @@ const Story = ({ isLoading, data, storyExists }) => {
                 </div>
               </div>
             </Banner>
-            <section className="bg-slate-50 -mb-32 md:mb-0 dark:bg-zinc-800 relative md:top-0 -top-8 rounded-3xl h-fit w-full flex flex-col md:flex-row md:items-start items-center">
+            <section className="z-30 bg-slate-50 -mb-32 md:mb-0 bg-transparent relative md:top-0 -top-8 rounded-t-3xl h-fit w-full flex flex-col md:flex-row md:items-start items-center">
               <div className="md:w-80 w-full md:ml-12 lg:ml-24 h-full relative flex items-center justify-center">
                 <div className="w-full flex items-center justify-center -top-28 relative md:absolute flex-col">
                   <div className={`poster mb-5 before:bg-slate-50 before:dark:bg-zinc-800 before:absolute before:content-[''] before:rounded-lg before:shadow-lg flex items-center justify-center rounded-lg z-20`}>
@@ -169,7 +169,7 @@ const Story = ({ isLoading, data, storyExists }) => {
             </section>
           </div >
           {/* BOTTOM DETAILS */}
-          <div className="hidden bg-white dark:bg-zinc-900 rounded-lg shadow-lg mt-44 md:flex w-full md:max-w-screen-xl md:mx-auto mb-8">
+          <div className="hidden bg-white dark:bg-zinc-900 rounded-lg shadow-lg mt-44 md:flex w-full md:max-w-screen-xl md:mx-auto mb-8 z-40">
             <div className='w-1/2 p-4'>
               {/* {auth?.user?.uid === data?.story?.authorId && <AddButton name={t('common:add-character')} link={`/character`} />} */}
               <Divider className="dark:border-stone-700" orientation="left" plain>
@@ -225,8 +225,8 @@ const Story = ({ isLoading, data, storyExists }) => {
               {/* SIMILAR STORIES  */}
             </div>
           </div >
-          <div className="relative md:hidden p-4">
-            <div className="rounded-lg py-8 px-4 bg-zinc-100 dark:bg-zinc-900 w-full shadow-lg">
+          <div className="relative md:hidden p-2">
+            <div className="rounded-lg py-8 px-4 mb-12 bg-zinc-100 dark:bg-zinc-900 w-full shadow-lg">
               <Tabs centered defaultActiveKey='item-1' items={[
                 {
                   label: t('story:details').charAt(0).toUpperCase() + t('story:details').slice(1),
