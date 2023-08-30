@@ -214,7 +214,7 @@ const Story = ({ isLoading, data, storyExists }) => {
             </div>
             <div className='w-1/2 py-4 px-8'>
               <Divider className="dark:border-stone-700" orientation="left" plain>
-                <h4 className="uppercase text-zinc-800 dark:text-slate-50 uppercase">{t('story:chapters')}</h4>
+                <h4 className="text-zinc-800 dark:text-slate-50 uppercase">{t('story:chapters')}</h4>
               </Divider>
               {auth?.user?.uid === data?.story?.authorId && <AddButton name={t('story:add-chapter')} link={`/story/${data?.story?.id}/chapter`} />}
               {
@@ -225,7 +225,7 @@ const Story = ({ isLoading, data, storyExists }) => {
               {/* SIMILAR STORIES  */}
             </div>
           </div >
-          <div className="relative md:hidden p-2">
+          <div className="relative md:hidden p-2 z-40">
             <div className="rounded-lg py-8 px-4 mb-12 bg-zinc-100 dark:bg-zinc-900 w-full shadow-lg">
               <Tabs centered defaultActiveKey='item-1' items={[
                 {

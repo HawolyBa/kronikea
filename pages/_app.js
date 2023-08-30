@@ -15,8 +15,7 @@ import { store } from '../database/rtkStore'
 import Layout from '../components/common/Layout';
 import { ProvideNotification } from '../database/notifications';
 
-// TODO - ADD RULES ON FIREBASE
-// TODO - ADSENSE
+
 // TODO - CHANGE FOR APP AND GET TOKEN FROM LAYOUT
 
 // V2
