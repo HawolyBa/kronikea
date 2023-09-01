@@ -21,7 +21,7 @@ const Slider = ({ data, t }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
 
   return (
-    <div className="md:flex flex flex-col md:flex-row relative carousel shadow-md rounded-xl overflow-hidden border bg-white dark:bg-zinc-900 dark:border-zinc-700 border-slate-200">
+    <div className="md:flex hidden flex-col md:flex-row relative carousel shadow-md rounded-xl overflow-hidden border bg-white dark:bg-zinc-900 dark:border-zinc-700 border-slate-200">
       <div className="w-full md:w-1/2 flex flex-col p-8 justify-center transition-all duration-75 ease-in md:order-1 order-2">
         <div className='border-l-8 p-2' style={{ borderColor: colors.secondary }}>
           <h2 className="md:leading-2 text-xs md:text-lg uppercase tracking-widest">{data && data[currentSlide]?.title}</h2>

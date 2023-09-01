@@ -165,7 +165,7 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
         <div className='chapter md:mt-6 md:px-4 mb-24'>
           <div className="md:max-w-screen-lg w-full mx-auto">
             <Banner image={data?.image}>
-              <div className="w-full flex items-center justify-center md:justify-end w-full h-full overflow-hidden rounded-3xl relative">
+              <div className="z-20 flex items-center justify-center md:justify-end w-full h-full overflow-hidden rounded-3xl relative">
                 <div className="flex md:justify-start justify-center items-center md:w-2/3 w-full">
                   <div className={`w-28 mr-3 h-36 rounded-lg md:ml-24 shadow-lg`}>
                     <Image
@@ -218,7 +218,7 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
               {/* BARRE LATERALE */}
               <aside className="md:w-1/12 left-0 top-20 sticky bg-white dark:bg-zinc-900 md:py-8 py-2 md:h-96 h-fit rounded-xl shadow-md flex md:flex-col text-zinc-500 justify-center items-center text-2xl md:mb-0 mb-3 z-50">
                 <Tooltip placement='bottom' title={t('chapter:story-page')}>
-                  <Link className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg block md:mb-4" href={`/story/${router.query.id}`}>
+                  <Link className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg md:mb-4" href={`/story/${router.query.id}`}>
                     <AiFillHome />
                   </Link>
                 </Tooltip>
@@ -231,33 +231,33 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
                     okText={t('common:yes')}
                     cancelText={t('common:no')}
                   >
-                    <div className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 md:mb-4 shadow-lg block">
+                    <div className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 md:mb-4 shadow-lg">
                       <AiOutlineUser />
                     </div>
                   </Popconfirm>
                 </Tooltip>
                 <Tooltip placement='bottom' title={capitalize(t('form:change-font'))}>
-                  <div onClick={() => changeFont()} className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg block md:mb-4">
+                  <div onClick={() => changeFont()} className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg md:mb-4">
                     <AiOutlineFontSize />
                   </div>
                 </Tooltip>
                 {auth?.user?.uid === data.authorId &&
                   <Tooltip placement='bottom' title={capitalize(t('form:edit-chapter'))}>
-                    <Link className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg block md:mb-4" href={`/story/${router.query.id}/chapter/${router.query.chapid}/edit`}>
+                    <Link className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg md:mb-4" href={`/story/${router.query.id}/chapter/${router.query.chapid}/edit`}>
                       <AiFillEdit />
                     </Link>
                   </Tooltip>
                 }
                 {data?.prev &&
                   <Tooltip placement='bottom' title={t('chapter:previous-chapter')}>
-                    <Link className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg block md:mb-4" href={`/story/${router.query.id}/chapter/${data?.prev}`}>
+                    <Link className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg md:mb-4" href={`/story/${router.query.id}/chapter/${data?.prev}`}>
                       <AiFillCaretLeft />
                     </Link>
                   </Tooltip>
                 }
                 {data?.next &&
                   <Tooltip placement='bottom' title={t('chapter:next-chapter')}>
-                    <Link className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg block md:mb-4" href={`/story/${router.query.id}/chapter/${data?.next}`}>
+                    <Link className="active:scale-95 bg-slate-100 dark:bg-zinc-800 transition duration-200 ease-in-out p-3 flex items-center justify-center rounded-md mx-2 hover:dark:text-slate-50 hover:text-zinc-500 hover:scale-105 shadow-lg md:mb-4" href={`/story/${router.query.id}/chapter/${data?.next}`}>
                       <AiFillCaretRight />
                     </Link>
                   </Tooltip>
@@ -267,7 +267,7 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
                 <div dangerouslySetInnerHTML={{ __html: data?.body }} className={`chapter__body text-justify text ${font}`}></div>
                 <Divider className="dark:border-stone-700" />
                 <div>
-                  <div className="flex justify-between items-center">
+                  <div className="md:flex md:justify-between items-center">
                     <h3 className="capitalize">{comments?.length} {comments?.length > 1 ? t('chapter:comments') : t('chapter:comment')}</h3>
                     {auth?.user ?
                       <div className='float-right'>

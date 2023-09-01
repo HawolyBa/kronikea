@@ -171,7 +171,6 @@ const Story = ({ isLoading, data, storyExists }) => {
           {/* BOTTOM DETAILS */}
           <div className="hidden bg-white dark:bg-zinc-900 rounded-lg shadow-lg mt-44 md:flex w-full md:max-w-screen-xl md:mx-auto mb-8 z-40">
             <div className='w-1/2 p-4'>
-              {/* {auth?.user?.uid === data?.story?.authorId && <AddButton name={t('common:add-character')} link={`/character`} />} */}
               <Divider className="dark:border-stone-700" orientation="left" plain>
                 <h4 className="text-zinc-800 capitalize dark:text-slate-50">{t('story:main')}</h4>
               </Divider>
@@ -225,6 +224,7 @@ const Story = ({ isLoading, data, storyExists }) => {
               {/* SIMILAR STORIES  */}
             </div>
           </div >
+          {/* MOBILE  */}
           <div className="relative md:hidden p-2 z-40">
             <div className="rounded-lg py-8 px-4 mb-12 bg-zinc-100 dark:bg-zinc-900 w-full shadow-lg">
               <Tabs centered defaultActiveKey='item-1' items={[
