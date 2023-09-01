@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next'
 
 import CategoryCard from '../../components/common/CategoryCard'
 import { CATEGORIES } from '../../utils/constants'
+import { capitalize } from '../../utils/helpers'
 
 const Categories = ({ setActiveCategories }) => {
 
@@ -13,12 +14,12 @@ const Categories = ({ setActiveCategories }) => {
     <>
       <Head>
         <title>
-          {t('common:categories')} - Kronikea
+          {capitalize(t('common:categories'))} - Kronikea
         </title>
       </Head>
       <div className='px-4 py-8 max-w-screen-xl mx-auto'>
         <h2 className='text-xl uppercase'>{t('category:all-categories')}</h2>
-        <div className="grid gap-6 grid-cols-5 mt-8">
+        <div className="grid gap-6 lg:grid-cols-5 md:grid-cols-3 grid-cols-2 mt-8">
           {CATEGORIES.map((cat) => (
             <CategoryCard t={t} setActiveCategories={setActiveCategories} data={cat} key={cat.value} />
           ))}

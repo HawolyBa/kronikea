@@ -35,7 +35,7 @@ const CatSlider = ({ t }) => {
     } else if (width < 1000 && width >= 600) {
       number = 3
     } else if (width < 600) {
-      number = 1
+      number = 2
     }
     setSlideNumber(number);
   }, [width])
@@ -43,7 +43,7 @@ const CatSlider = ({ t }) => {
   return (
     <div className='mt-12'>
       <div className="flex justify-between items-center mb-2">
-        <h3 className='uppercase font-bold home__heading font-light'>Explore</h3>
+        <h3 className='uppercase home__heading font-light'>Explore</h3>
         <div>
           <Link href="/category">
             <span className='cursor-pointer'>{t('home:see-all')}<RightOutlined />
