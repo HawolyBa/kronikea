@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@ant-design/compatible": "^5.1.1",
+    "@egjs/react-flicking": "^4.11.0",
     "@reduxjs/toolkit": "^1.9.3",
     "algoliasearch": "^4.15.0",
     "antd": "^5.2.3",

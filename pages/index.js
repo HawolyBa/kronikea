@@ -15,6 +15,7 @@ import CatSlider from '../components/home/CatSlider'
 import StoryCardMini from '../components/common/StoryCardMini'
 import { getPopularStories, getPopularStoriesByCategory } from '../database/actions/stories'
 import { getPopularCharacters } from '../database/actions/characters'
+import SliderMobile from '../components/home/SliderMobile'
 
 const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloading }) => {
 
@@ -36,6 +37,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
       <Spin spinning={auth.isLoading || isLoading}>
         <main className="home max-w-screen-xl mx-auto py-8 px-4">
           <Slider t={t} data={data?.featured} />
+          <SliderMobile t={t} data={data?.featured} />
           <CatSlider t={t} />
           {/* POPULAR STORIES */}
           <div className="mt-12">
