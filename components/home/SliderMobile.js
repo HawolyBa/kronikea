@@ -14,11 +14,11 @@ const SliderMobile = ({ data, t }) => {
         viewportTag="a"
         cameraTag="div"
         cameraClass=""
+        align="prev"
         renderOnSameKey={true}
         onMove={(e) => { }}
         onWillChange={(e) => { }}
         horizontal={true}
-        circular={true}
       >
         {data && data.map(story => (
           <Link key={story.id} href={`/story/${story.id}`}>
