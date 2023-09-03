@@ -51,5 +51,14 @@
   "termination": "Termination",
   "termination-intro": "We reserve the right to suspend or terminate your access to the Site for violating these terms of use or for any other reason at our discretion.",
   "contact-privacy": "For any questions, concerns, or reports of violations of these terms, please contact us at the address provided on the Site.",
-  "privacy-conclusion": "By using the Kronikea Site, you acknowledge that you have read, understood, and accepted these terms of use. Your use of the Site is subject to these terms as well as all applicable laws and regulations."
+  "privacy-conclusion": "By using the Kronikea Site, you acknowledge that you have read, understood, and accepted these terms of use. Your use of the Site is subject to these terms as well as all applicable laws and regulations.",
+  "contact-us": "Contact Us",
+  "contact-us-intro": "Do you have questions or comments for Kronikea? We would love to hear from you! Please fill out the form below and we will get back to you as soon as possible.",
+  "your-id": "Your ID",
+  "your-username": "Your username",
+  "contact-us-login": "Please login to fill the form",
+  "contact-us-alternative": "Alternatively, you can reach us via email at",
+  "contact-us-placeholder": "How can we help you ?",
+  "send-button": "Send",
+  "follow-us": "Follow us on social media for the latest news, site updates, and promotions"
 }

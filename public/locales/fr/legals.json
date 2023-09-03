@@ -51,5 +51,14 @@
   "termination": "Résiliation",
   "termination-intro": "Nous nous réservons le droit de suspendre ou de résilier votre accès au Site en cas de violation de ces conditions d'utilisation ou pour toute autre raison à notre discrétion.",
   "contact-privacy": "Pour toute question, préoccupation ou signalement de violation de ces conditions, veuillez nous contacter à l'adresse indiquée sur le Site.",
-  "privacy-conclusion": "En utilisant le Site Kronikea, vous reconnaissez avoir lu, compris et accepté ces conditions d'utilisation. Votre utilisation du Site est soumise à ces conditions, ainsi qu'à toutes les lois et réglementations applicables."
+  "privacy-conclusion": "En utilisant le Site Kronikea, vous reconnaissez avoir lu, compris et accepté ces conditions d'utilisation. Votre utilisation du Site est soumise à ces conditions, ainsi qu'à toutes les lois et réglementations applicables.",
+  "contact-us": "Contactez-nous",
+  "contact-us-intro": "Avez-vous des questions ou des commentaires pour Kronikea ? Nous aimerions en savoir plus ! Veuillez remplir le formulaire ci-dessous et nous vous répondrons dès que possible.",
+  "your-id": "Votre ID",
+  "your-username": "Votre nom d'utilisateur",
+  "contact-us-login": "Veuillez vous connecter pour remplir le formulaire.",
+  "contact-us-alternative": "Vous pouvez également nous contacter par e-mail à l'adresse suivante",
+  "contact-us-placeholder": "Comment pouvons-nous vous aider ?",
+  "send-button": "Envoyer",
+  "follow-us": "Suivez-nous sur les réseaux sociaux pour les dernières actualités, les mises à jour du site et les promotions."
 }
