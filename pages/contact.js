@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { useAuth } from '../database/auth'
-import { Form, Input, Alert } from 'antd'
+import { Form, Input, Alert, Divider } from 'antd'
 
 import Button from '../components/common/Button'
 import { useSendMessageMutation } from '../database/reducers/profile'
@@ -43,7 +43,7 @@ const Contact = () => {
       </Head>
       <div className="contact p-4 w-full">
         <div className='bg-white dark:bg-zinc-900 rounded-xl max-w-screen-lg py-8 md:px-12 px-4 mx-auto shadow-lg'>
-          <h2 className='text-center text-2xl uppercase mb-8'>{t('legals:contact-us')}</h2>
+          <h2 className='text-center font-light text-2xl uppercase mb-8'>{t('legals:contact-us')}</h2>
           <p className="mb-4">{t('legals:contact-us-intro')}</p>
           <div className='my-8'>
             {
@@ -86,6 +86,22 @@ const Contact = () => {
             </li>
             <li>
               Instagram: @kronikea
+            </li>
+          </ul>
+          <Divider />
+          <h4 className="font-bold text-lg uppercase">{t('legals:about-links')}</h4>
+          <ul className="mb-4">
+            <li className="mb-2">
+              <Link href="/privacy" className="underline">{t('legals:kronikea-policy')}</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/about" className="underline">{t('legals:about-us')}</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/terms" className="underline">{t('legals:terms')}</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/feedback" className="underline">{t('legals:feedback')}</Link>
             </li>
           </ul>
         </div>
