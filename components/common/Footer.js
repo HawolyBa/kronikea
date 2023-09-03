@@ -60,16 +60,16 @@ const Footer = () => {
               <h5 className="text-primary font-bold mb-3 uppercase">{t('common:join-us')}</h5>
               <ul>
                 <li className="text-sm mb-1">
-                  <a target="_blank" rel="noreferrer" href="/">Facebook</a>
+                  <a target="_blank" rel="noreferrer" href="https://facebook.com/kronikea">Facebook</a>
                 </li>
                 <li className="text-sm mb-1">
-                  <a target="_blank" rel="noreferrer" href="/explore">Twitter</a>
+                  <a target="_blank" rel="noreferrer" href="https://twitter.com/kronikea">Twitter</a>
                 </li>
                 <li className="text-sm mb-1">
-                  <a target="_blank" rel="noreferrer" href="/">Instagram</a>
+                  <a target="_blank" rel="noreferrer" href="https://instagram.com/kronikea">Instagram</a>
                 </li>
                 <li className="text-sm mb-1">
-                  <a target="_blank" rel="noreferrer" href="/explore">TikTok</a>
+                  <a target="_blank" rel="noreferrer" href="https://tiktok.com/kronikea">TikTok</a>
                 </li>
               </ul>
             </div>

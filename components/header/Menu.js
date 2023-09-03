@@ -54,19 +54,19 @@ const Menu = ({ t, darkTheme, changeTheme, activeCategories, setActiveCategories
         <div className="md:hidden mb-6">
           <h4 className='mt-6 mb-3 text-lg uppercase'>{t('common:navigate')}</h4>
           <ul>
-            <li className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
+            <li onClick={() => setActiveCategories(false)} className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
               <Link href={`/contact`}>Contact</Link>
             </li>
-            <li className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
+            <li onClick={() => setActiveCategories(false)} className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
               <Link href={`/feedback`}>{t('common:feedback')}</Link>
             </li>
-            <li className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
+            <li onClick={() => setActiveCategories(false)} className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
               <Link href={`/about`}>{t('common:about-us')}</Link>
             </li>
-            <li className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
+            <li onClick={() => setActiveCategories(false)} className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
               <Link href={`/terms`}>{t('common:terms')}</Link>
             </li>
-            <li className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
+            <li onClick={() => setActiveCategories(false)} className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`}>
               <Link href={`/privacy`}>{t('common:privacy')}</Link>
             </li>
           </ul>

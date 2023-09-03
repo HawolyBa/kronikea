@@ -87,13 +87,13 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                                     </ContextMenu>
                                 </>}
                             <div className='dark:border-zinc-800 border-l-2 ml-4 border-slate-100 md:flex hidden'>
-                                <SocialButtons title="Facebook" link="https://facebook.com">
+                                <SocialButtons title="Facebook" link="https://facebook.com/kronikea">
                                     <FiFacebook />
                                 </SocialButtons>
-                                <SocialButtons title='Twitter' link="https://twitter.com">
+                                <SocialButtons title='Twitter' link="https://twitter.com/kronikea">
                                     <FiTwitter />
                                 </SocialButtons>
-                                <SocialButtons title="Instagram" link="https://instagram.com">
+                                <SocialButtons title="Instagram" link="https://instagram.com/kronikea">
                                     <FiInstagram />
                                 </SocialButtons>
                             </div>
