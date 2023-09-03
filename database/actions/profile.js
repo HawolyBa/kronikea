@@ -375,3 +375,22 @@ export const sendMessage = async data => {
     }
   }
 }
+
+export const sendFeedback = async data => {
+  try {
+    addDoc(collection(db, "feedback"), {
+      ...data,
+      createdAt: serverTimestamp()
+    })
+
+    return {
+      data: "Message sent successfully"
+    }
+
+  } catch (err) {
+    console.log(err)
+    return {
+      error: "Something went wrong"
+    }
+  }
+}

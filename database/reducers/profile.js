@@ -16,7 +16,7 @@
 // export default profileSlice.reducer;
 
 import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react'
-import { report, getUserInfo, getProfile, changeProfile, followUser, getForYouPage, sendMessage } from '../actions/profile'
+import { report, getUserInfo, getProfile, changeProfile, followUser, getForYouPage, sendMessage, sendFeedback } from '../actions/profile'
 
 export const profileAPI = createApi({
   reducerPath: 'profileAPI',
@@ -62,8 +62,13 @@ export const profileAPI = createApi({
       async queryFn(data) {
         return sendMessage(data)
       }
+    }),
+    sendFeedback: builder.mutation({
+      async queryFn(data) {
+        return sendFeedback(data)
+      }
     })
   })
 })
 
-export const { useGetUserInfoQuery, useChangeProfileMutation, useReportMutation, useGetProfileQuery, useFollowUserMutation, useGetForYouPageQuery, useSendMessageMutation } = profileAPI
+export const { useGetUserInfoQuery, useChangeProfileMutation, useReportMutation, useGetProfileQuery, useFollowUserMutation, useGetForYouPageQuery, useSendMessageMutation, useSendFeedbackMutation } = profileAPI
