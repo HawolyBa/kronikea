@@ -1,6 +1,6 @@
 import React from 'react'
 import { notification } from 'antd';
-import CookieConsent from "react-cookie-consent";
+// import CookieConsent from "react-cookie-consent";
 import { useTranslation } from 'next-i18next'
 
 import { useNotifcations } from '../../database/notifications';
@@ -72,7 +72,7 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
         {children}
       </div>
       <Footer />
-      <CookieConsent
+      {/* <CookieConsent
         location="bottom"
         buttonText={t('common:accept')}
         cookieName="kronikea-cookies"
@@ -84,7 +84,7 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
       >
         {t('common:cookies')}{" "}
 
-      </CookieConsent>
+      </CookieConsent> */}
     </div>
 
   );
