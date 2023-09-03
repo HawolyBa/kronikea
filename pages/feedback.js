@@ -62,7 +62,7 @@ const Feeback = () => {
             <Form.Item name="category" >
               <Select placeholder={capitalize(t('common:category'))} options={[
                 { value: "design", label: "UI/Design" },
-                { value: "functionalities", label: t('legals:features') },
+                { value: "features", label: t('legals:features') },
                 { value: "security", label: t('legals:security') },
                 { value: "communication", label: "Communication" },
                 { value: "other", label: t('legals:other') },
