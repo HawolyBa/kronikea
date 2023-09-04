@@ -63,7 +63,7 @@ const Pagination = ({
     const changePagination = () => {
       setPagination({
         ...pagination,
-        datasPerPage: type === 'comments' ? 15 : type === 'profile' ? 6 : type === 'stories-archives' ? 20 : type === 'users-archives' ? 20 : type === 'characters-archives' ? 24 : type === 'archives' ? 10 : type === 'stories' ? 4 : (type === 'characters' || type === 'locations') && (width > 600 && width < 1200) ? 4 : 6
+        datasPerPage: type === 'comments' ? 15 : type === 'profile' ? 6 : type === 'stories-archives' ? 20 : type === 'users-archives' ? 20 : type === 'characters-archives' ? 24 : type === 'archives' ? 10 : type === 'stories' ? 4 : (type === 'characters' || type === 'locations') && (600 && width < 1200) ? 4 : 6
       })
     }
     changePagination()

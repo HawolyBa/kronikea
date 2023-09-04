@@ -35,12 +35,12 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
 
       </Head>
       <Spin spinning={auth.isLoading || isLoading}>
-        <main className="home max-w-screen-xl mx-auto py-8 px-4">
+        <main className="home max-w-screen-xl mx-auto pb-8 md:pt-8">
           <Slider t={t} data={data?.featured} />
           <SliderMobile t={t} data={data?.featured} />
           <CatSlider t={t} />
           {/* POPULAR STORIES */}
-          <div className="mt-12">
+          <div className="mt-12 px-4">
             <Divider className="dark:border-stone-700" orientation="left" plain>
               <h3 className="uppercase dark:text-zinc-50 font-light home__heading">{t('home:popular-stories')}</h3>
             </Divider>
@@ -52,7 +52,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
               ))}
             </div>
             {/* CATEGORIES STORIES SECTION */}
-            <section className='my-12 md:p-4 w-full grid gap-6 grid-cols-1 md:grid-cols-3 place-content-center'>
+            <section className='my-12 md:p-4 w-full grid gap-6 grid-cols-1 md:grid-cols-3 place-content-center px-4'>
               <div className="md:px-2 md:border-r md:dark:border-neutral-800">
                 <h4 className="text-lg mb-6">{t('common:drama')}</h4>
                 <div>
@@ -81,7 +81,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                 <Link href="/category/fantasy">{'See More >>'}</Link>
               </div>
             </section>
-            <div className="mt-12">
+            <div className="mt-12 px-4">
               <Divider orientation="left" plain className="dark:border-stone-700">
                 <h3 className="uppercase dark:text-zinc-50 font-light home__heading">{t('home:popular-characters')}</h3>
               </Divider>

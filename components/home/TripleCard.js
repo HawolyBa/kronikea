@@ -14,6 +14,7 @@ const TripleCard = ({ slide, prev, next }) => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, [updateDimensions]);
+
   return (
     <div className='w-5/6 top-6 mx-auto h-full relative flex items-center justify-center transition duration-150 triple-card'>
       <div onClick={() => swiper.slidePrev()} style={{ height: width > 800 ? '80%' : "50%", width: width > 800 ? '55%' : '60%', }} className="bg-cover bg-center shadow-lg w-1/3 h-72 active rounded-xl absolute ease-in transition duration-150 left-6 -rotate-12 border border-zinc-700">

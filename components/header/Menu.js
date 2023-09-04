@@ -12,6 +12,18 @@ import { CATEGORIES, colors } from '../../utils/constants'
 import logo from '../../images/search.png'
 
 const Menu = ({ t, darkTheme, changeTheme, activeCategories, setActiveCategories }) => {
+  const [width, setWidth] = React.useState(typeof window !== 'undefined' && window.innerWidth)
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth)
+  }
+
+  React.useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, [updateDimensions]);
+
+  console.log(width)
 
   return (
     <Drawer
@@ -19,7 +31,7 @@ const Menu = ({ t, darkTheme, changeTheme, activeCategories, setActiveCategories
       onClose={() => setActiveCategories(false)}
       title="coucou"
       className="main-menu"
-      width={'90%'}
+      width={width > 810 ? '40%' : '85%'}
       closeIcon={<AiOutlineClose />}
       open={activeCategories}
       rootStyle={{ zIndex: "9999999999999999999" }}

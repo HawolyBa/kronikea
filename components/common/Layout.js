@@ -67,7 +67,7 @@ const Layout = ({ children, darkTheme, setDarkTheme }) => {
 
     <div className={`layout overflow-x-hidden ${darkTheme ? 'dark' : ''}`}>
       <Header setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
-      <div className='relative pt-20'>
+      <div id="main__content" className='relative '>
         {contextHolder}
         {children}
       </div>

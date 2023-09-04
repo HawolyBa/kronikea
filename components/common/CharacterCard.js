@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 import { placeholders } from '../../utils/constants'
 
 const CharacterCard = ({ data, type, removeCharacter }) => {
+  const { t } = useTranslation()
   return (
     <div className='relative w-full'>
       {type === "add" && (
@@ -26,7 +28,7 @@ const CharacterCard = ({ data, type, removeCharacter }) => {
             </h3>
             {(type === "add" || type === "show") && (
               <span className="text-xs text-gray-400 text-center">
-                {data.relation ? data.relation : data.authorName ? 'by ' + data.authorName : ''}
+                {data.relation ? data.relation : data.authorName ? `${t('common:by')} ${data.authorName}` : ''}
               </span>
             )}
           </figcaption>

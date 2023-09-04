@@ -10,7 +10,6 @@ import { placeholders } from '../../utils/constants'
 const StoryCard = ({ story, type }) => {
   return (
     <Link href={`/story/${story.id}`}>
-
       <div className="w-full story-card relative cursor-pointer hover:shadow-lg ease-linear duration-75 h-fit-content my-4 ">
         <div className="poster w-36 h-full absolute bottom-0 left-0 relative">
           <Image fill src={story.image ? story.image : placeholders.card} alt={story.title} style={{ objectFit: 'cover' }} />

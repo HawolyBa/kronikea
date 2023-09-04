@@ -41,7 +41,7 @@ const CatSlider = ({ t }) => {
   }, [width])
 
   return (
-    <div className='mt-12'>
+    <div className='mt-12 px-4'>
       <div className="flex justify-between items-center mb-2">
         <h3 className='uppercase home__heading font-light'>Explore</h3>
         <div>

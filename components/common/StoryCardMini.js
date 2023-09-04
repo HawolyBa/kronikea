@@ -5,9 +5,11 @@ import { IoIosLock } from "react-icons/io";
 import { Badge } from 'antd'
 import { FaEye, FaStar } from 'react-icons/fa'
 import { placeholders, colors } from '../../utils/constants'
+import { useTranslation } from 'next-i18next'
 
 
 const StoryCardMini = ({ data, type }) => {
+  const { t } = useTranslation()
   return (
     <Link className='mb-4 w-full story__mini__card' href={`/story/${data.id}`}>
       <figure className="flex">
@@ -23,7 +25,7 @@ const StoryCardMini = ({ data, type }) => {
         }
         <figcaption style={{ width: `calc(100% - 7rem)` }} className="px-3">
           <h4 className="text-lg text-zinc-900 dark:text-slate-50 capitalize w-full whitespace-nowrap overflow-hidden text-ellipsis cursor-pointer mb-0">{data.title}</h4>
-          {type === 'other' && <span>by {data.authorName}</span>}
+          {type === 'other' && <span>{t('common:by')} {data.authorName}</span>}
           <p className='card-description text-gray-400 text-xs mt-3'>{data.summary}</p>
           <div className='flex items-center mt-4'>
             <div className='flex items-center text-xs text-zinc-500 dark:text-slate mr-4'><FaEye /><span className='ml-1'>{data?.views ? data?.views : 0}</span></div>

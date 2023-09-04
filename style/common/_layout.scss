@@ -1,6 +1,10 @@
-main#main__content {
-  max-width: 1200px;
-  margin: 0 auto
+// main#main__content {
+//   max-width: 1200px;
+//   margin: 0 auto
+// }
+
+#main__content {
+  padding-top: 70px
 }
 
 .seemore {
@@ -93,3 +97,9 @@ img.ant-image-preview-img {
 // .ant-input-affix-wrapper>input.ant-input {
 //   text-transform: capitalize;
 // }
+
+@media (max-width: 810px) {
+  #main__content {
+    padding-top: 50px
+  }
+}

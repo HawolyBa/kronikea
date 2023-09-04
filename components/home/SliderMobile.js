@@ -8,13 +8,13 @@ import { placeholders } from '../../utils/constants';
 const SliderMobile = ({ data, t }) => {
 
   return (
-    <div className="md:hidden block">
-      <h2 className="uppercase mb-2 font-light">À la une</h2>
+    <div className="md:hidden block relative bg-white dark:bg-zinc-900 p-4">
+      <h2 className="uppercase mb-2 font-light">{t('common:featured')}</h2>
       <Flicking
         viewportTag="a"
         cameraTag="div"
         cameraClass=""
-        align="prev"
+        align="center"
         renderOnSameKey={true}
         onMove={(e) => { }}
         onWillChange={(e) => { }}
@@ -28,7 +28,7 @@ const SliderMobile = ({ data, t }) => {
               </div>
               <figcaption className="overflow-hidden text-center leading-3">
                 <h3 className="text-sm mt-2 p-0 mb-0 font-medium w-full whitespace-nowrap overflow-hidden text-ellipsis">{story.title}</h3>
-                <span className="text-gray-400 mb-1 text-sm block">by {story.authorName}</span>
+                <span className="text-gray-400 mb-1 text-sm block">{t('common:by')} {story.authorName}</span>
               </figcaption>
             </figure>
           </Link>
