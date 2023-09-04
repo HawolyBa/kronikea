@@ -32,15 +32,13 @@ const Create = ({ t }) => {
   ]
 
   return (
-    <div className='md:block hidden'>
-      <Dropdown placement='bottomRight' overlayStyle={{ zIndex: 9999999999999 }} trigger={['click']} menu={{ items }}>
-        <Tooltip placement="bottom" title={t('common:create')}>
-          <div className='hover:scale-105 transition duration-200 ease-in-out cursor-pointer p-2 rounded-md shadow-md mx-2'>
-            <AiOutlinePlus style={{ color: colors.primary }} />
-          </div>
-        </Tooltip>
-      </Dropdown>
-    </div>
+    <Dropdown placement='bottomRight' overlayStyle={{ zIndex: 9999999999999 }} trigger={['click']} menu={{ items }}>
+      <Tooltip placement="bottom" title={t('common:create')}>
+        <div className='hover:scale-105 transition duration-200 ease-in-out cursor-pointer p-2 rounded-md shadow-md mx-2'>
+          <AiOutlinePlus style={{ color: colors.primary }} />
+        </div>
+      </Tooltip>
+    </Dropdown>
   )
 }
 

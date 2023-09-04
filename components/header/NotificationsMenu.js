@@ -1,18 +1,11 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { Dropdown, Badge } from 'antd';
+import { Badge } from 'antd';
 import { FaBell } from 'react-icons/fa';
 
 import { colors } from '../../utils/constants';
-import { useNotifcations } from '../../database/notifications';
 
-const NotificationsMenu = () => {
-
-  const { push } = useRouter()
-  const notifications = useNotifcations()
-
-  const items = []
+const NotificationsMenu = ({ notifications }) => {
 
   return (
     // <Dropdown placement='bottomRight' overlayStyle={{ zIndex: 9999999999999 }} trigger={['click']} menu={{ items }}>

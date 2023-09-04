@@ -9,6 +9,7 @@ import { IconContext } from "react-icons";
 import { BiSearchAlt, BiDotsVerticalRounded } from "react-icons/bi";
 
 import { useAuth } from '../../database/auth'
+import { useNotifcations } from '../../database/notifications';
 import logo from '../../images/logo-kronikea.png'
 
 import Search from './Search';
@@ -25,6 +26,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
     const { t } = useTranslation();
     const [activeSearch, setActiveSearch] = React.useState(false)
     const [activeCategories, setActiveCategories] = React.useState(false)
+    const notifications = useNotifcations()
 
     const changeTheme = (val) => {
         setDarkTheme(val)
@@ -38,14 +40,14 @@ const Header = ({ setDarkTheme, darkTheme }) => {
     }
     return (
         <>
-            <header id="main-header" className="top-0 left-0 w-full sticky main__header dark:text-white text-zinc-900 bg-white dark:bg-zinc-900 z-50">
+            <header id="main-header" className=" fixed top-0 left-0 w-full main__header dark:text-white text-zinc-900 bg-white dark:bg-zinc-900 z-50">
                 <div className='md:max-w-screen-xl mx-auto flex items-center justify-between w-full h-full'>
                     <div className='md:pl-6 pl-2 flex items-center'>
                         <Link href='/' className="flex items-center">
                             <Image src={logo.src} width={30} height={30} />
                             <h1 className="ml-2 main_title uppercase text-sm md:text-lg cursor-pointer">Kronikea</h1>
                         </Link>
-                        <nav className="ml-8 mt-1 md:block hidden">
+                        <nav className="ml-8 md:block hidden">
                             <ul className="flex items-center">
                                 <li className="mr-3"><Link href='/'>{t('common:home')}</Link></li>
                                 <li className='mr-3'><Link href='/for-you'>{t('common:foryou')}</Link></li>
@@ -72,7 +74,7 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                                             <Image src={auth.user.image ? auth.user.image : placeholders.avatar} alt={auth.user.username} fill style={{ objectFit: 'cover' }} />
                                         </div>
                                     </ContextMenu>
-                                    <NotificationsMenu />
+                                    <NotificationsMenu notifications={notifications} />
                                 </> :
                                 <>
                                     {/* <Divider type='vertical' /> */}
@@ -125,10 +127,12 @@ const Header = ({ setDarkTheme, darkTheme }) => {
                 setActiveCategories={setActiveCategories}
             />
             <BottomTabs
+                auth={auth}
                 setActiveSearch={setActiveSearch}
                 activeSearch={activeSearch}
                 setActiveCategories={setActiveCategories}
                 activeCategories={activeCategories}
+                notifications={notifications}
             />
         </>
     )

@@ -15,6 +15,8 @@ header.main__header {
   }
 
 
+
+
   //background: #f0ebea // padding: 20px 30px 10px 30px;
   // display: flex;
   // justify-content: space-between;
@@ -138,5 +140,11 @@ header.main__header {
     .main__header__menu__btn {
       display: block;
     }
+  }
+}
+
+@media (max-width: 811px) {
+  header.main__header {
+    height: 50px;
   }
 }
