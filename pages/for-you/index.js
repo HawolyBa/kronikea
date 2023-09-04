@@ -37,7 +37,7 @@ const MyFeed = () => {
         <title>{t('common:foryou')} - Kronikea</title>
       </Head>
       <div className='for__you w-full'>
-        <div className="max-w-screen-xl pb-8 md:py-8 md:px-8 md:px-4 mx-auto">
+        <div className="max-w-screen-xl pb-8 md:py-8 md:px-8  mx-auto">
           <Spin spinning={auth.isLoading || !auth.user || isLoading}>
             <div className="my-4 text-zinc-900 dark:text-slate-100 dark:bg-zinc-900 bg-white rounded-lg shadow-lg">
               <div className="md:flex">

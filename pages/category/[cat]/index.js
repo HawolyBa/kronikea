@@ -71,18 +71,20 @@ const Category = ({ stories }) => {
     )
   }, [filters])
 
+  console.log(router)
+
   return (
     <>
       <Head>
         <title>{t(`common:${router.query.cat}`).toUpperCase()} - Kronikea</title>
       </Head>
       <div className='archive custom__archive w-full'>
-        <div className="max-w-screen-xl pb-8 md:py-8 md:px-8 md:px-4 mx-auto">
+        <div className="max-w-screen-xl pb-8 md:py-8 md:px-8 mx-auto">
           <Banner image={category.image.src}>
             <div className="flex h-full w-full justify-center md:justify-between md:flex-row flex-col md:ml-24 items-center z-20">
-              <div>
+              <div className="flex flex-col items-center md:block">
                 <h2 className="text-3xl font-bold text-slate-50 capitalize">{t('common:category')}: {t(`common:${router.query.cat.toLowerCase()}`)}</h2>
-                <h3 className=" text-2xl">{data.length} {data.length > 1 ? t('common:stories') : t('common:story')}</h3>
+                <h3 className="text-2xl">{data.length} {data.length > 1 ? t('common:stories') : t('common:story')}</h3>
               </div>
               {/* SUBSCRIBE BUTTON */}
               <div onClick={() => auth?.user ? subscribe(router.query.cat) : router.push('/auth')} className={`md:mr-24 px-4 py-2 flex items-center justify-center active:scale-95 border-2 border-primary text-slate-50 text-xs rounded-md cursor-pointer  uppercase shadow-md ${auth?.user?.subscribedCat?.includes(router.query.cat) ? 'bg-white backdrop-filter backdrop-blur-md bg-opacity-20' : 'bg-primary'}`}>

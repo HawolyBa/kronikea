@@ -11,7 +11,6 @@ import { Divider, Image, Tabs, Tooltip, Empty, Spin } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import serviceAccount from "../../database/serviceAccount"
-import config from '../../database/firebaseConfig'
 
 import { useAuth } from '../../database/auth'
 import { useChangeProfileMutation } from '../../database/reducers/profile'
