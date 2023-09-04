@@ -71,8 +71,6 @@ const Category = ({ stories }) => {
     )
   }, [filters])
 
-  console.log(router)
-
   return (
     <>
       <Head>
@@ -83,7 +81,7 @@ const Category = ({ stories }) => {
           <Banner image={category.image.src}>
             <div className="flex h-full w-full justify-center md:justify-between md:flex-row flex-col md:ml-24 items-center z-20">
               <div className="flex flex-col items-center md:block">
-                <h2 className="text-3xl font-bold text-slate-50 capitalize">{t('common:category')}: {t(`common:${router.query.cat.toLowerCase()}`)}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-center text-slate-50 capitalize">{t('common:category')}: {t(`common:${router.query.cat.toLowerCase()}`)}</h2>
                 <h3 className="text-2xl">{data.length} {data.length > 1 ? t('common:stories') : t('common:story')}</h3>
               </div>
               {/* SUBSCRIBE BUTTON */}
