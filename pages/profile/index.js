@@ -11,9 +11,10 @@ import { Divider, Image, Tabs, Tooltip, Empty, Spin } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import serviceAccount from "../../database/serviceAccount"
+import { skipToken } from '@reduxjs/toolkit/query'
 
 import { useAuth } from '../../database/auth'
-import { useChangeProfileMutation } from '../../database/reducers/profile'
+import { useChangeProfileMutation, useGetProfileQuery } from '../../database/reducers/profile'
 import { getProfile } from "../../database/actions/profile";
 
 import Pagination from "../../components/common/Pagination";
@@ -22,12 +23,13 @@ import Followers from "../../components/profile/Followers";
 import SocialButtons from "../../components/header/SocialButtons";
 import { placeholders } from "../../utils/constants";
 
-const Profile = ({ data, isLoading }) => {
+const Profile = () => {
 
   // TODO - CHANGE LINK COPY PATH WHEN LIVE !!!
   const auth = useAuth()
   const router = useRouter()
   const [changeProfile] = useChangeProfileMutation()
+  const { data, isLoading } = useGetProfileQuery(auth?.user?.uid ?? skipToken)
   const showMessage = React.useRef(false)
   const [message, setMessage] = React.useState(null)
 
@@ -248,22 +250,22 @@ const Profile = ({ data, isLoading }) => {
 }
 
 export const getServerSideProps = async (context) => {
-  const admin = require('firebase-admin');
-  const { credential } = require('firebase-admin');
+  // const admin = require('firebase-admin');
+  // const { credential } = require('firebase-admin');
 
-  if (!admin.apps.length) admin.initializeApp({
-    credential: credential.cert(serviceAccount),
-    databaseURL: "https://story-center.firebaseio.com"
-  });
+  // if (!admin.apps.length) admin.initializeApp({
+  //   credential: credential.cert(serviceAccount),
+  //   databaseURL: "https://story-center.firebaseio.com"
+  // });
 
-  const cookies = nookies.get(context);
-  const token = cookies.token ? await admin.auth().verifyIdToken(cookies.token) : null;
-  const uid = token ? token.uid : null;
-  const data = uid ? await getProfile(uid, 'profile', uid) : null
+  // const cookies = nookies.get(context);
+  // const token = cookies.token ? await admin.auth().verifyIdToken(cookies.token) : null;
+  // const uid = token ? token.uid : null;
+  // const data = uid ? await getProfile(uid, 'profile', uid) : null
   return {
     props: {
-      cookies,
-      data: data ? data.data : null,
+      // cookies,
+      // data: data ? data.data : null,
       ...(await serverSideTranslations(context.locale, ["profile", 'form', 'auth', "common"]))
     },
   };
