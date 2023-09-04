@@ -269,4 +269,4 @@ export const getServerSideProps = async (context) => {
   };
 }
 
-export default Profile
+export default React.memo(Profile)
