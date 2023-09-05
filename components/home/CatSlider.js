@@ -60,6 +60,12 @@ const CatSlider = ({ t }) => {
       >
         <NextButton />
         <PrevButton />
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2847418034592467"
+          data-ad-slot="5007136949"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
         {CATEGORIES.map(cat => (
           <SwiperSlide key={cat.id} style={{ height: "100%" }}>
             <CategoryCard t={t} data={cat} />
