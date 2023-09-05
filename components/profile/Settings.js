@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Form, Tabs, Input, Divider, Alert, Tooltip, Checkbox } from 'antd';
 import { IconContext } from "react-icons";
 import { IoIosSettings } from "react-icons/io";
+import { FcGoogle } from "react-icons/fc";
 
 import UploadImage from '../../components/common/UploadImage'
 import Button from '../../components/common/Button'
@@ -157,11 +158,17 @@ const Settings = ({ message, auth, success, errors, t, profile, changePassword, 
                       </div>
                       <small>{t('profile:privacy-explained')}</small>
                       <Divider className="dark:border-stone-700" />
-                      <div>
-                        <Button color="bg-primary" onClick={() => setMode('password')}>
-                          {t('profile:change-password')}
-                        </Button>
-                      </div>
+                      {auth.isGoogleOnly ? (
+                        <div className="mb-5">
+                          <span className="flex items-center">{t('profile:auth-method')}:  <FcGoogle style={{ margin: '0 10px' }} /> {t('profile:google-user')}</span>
+                          {/* <p>{t('profile:set-password')} ?</p> */}
+                        </div>
+                      ) :
+                        <div>
+                          <Button color="bg-primary" onClick={() => setMode('password')}>
+                            {t('profile:change-password')}
+                          </Button>
+                        </div>}
                       <Divider className="dark:border-stone-700" />
                       <div>
                         <Button textColor="text-red-500" onClick={() => setMode('delete')} danger>

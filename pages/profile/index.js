@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { FiFacebook, FiTwitter, FiInstagram, FiLink } from "react-icons/fi"
 import { FaDeviantart } from "react-icons/fa"
 import { IconContext } from "react-icons";
-import { IoIosLogOut } from "react-icons/io";
+import { IoIosLogOut, IoIosLock } from "react-icons/io";
 import { Divider, Image, Tabs, Tooltip, Empty, Spin } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
@@ -131,7 +131,7 @@ const Profile = () => {
               {/* BANNER DETAILS */}
               <div className="bg-slate-50 dark:bg-zinc-800 relative md:top-0 -top-8 rounded-3xl h-fit w-full flex flex-col md:flex-row justify-center md:items-start items-center">
                 <div className="w-56 h-full relative flex items-center justify-center">
-                  <div className="absolute before:bg-slate-50 before:dark:bg-zinc-800 -top-20 profile__avatar w-48 h-48 flex items-center before:absolute before:content-[''] before:rounded-full before:shadow-lg before:w-52 before:h-52 justify-center rounded-full flex">
+                  <div className="absolute before:bg-slate-50 before:dark:bg-zinc-800 -top-20 profile__avatar w-48 h-48 flex items-center before:absolute before:content-[''] before:rounded-full before:shadow-lg before:w-52 before:h-52 justify-center rounded-full">
                     <Image
                       width={"100%"}
                       height={"100%"}
@@ -216,9 +216,10 @@ const Profile = () => {
                   },
                   {
                     key: '2',
-                    label: t('profile:favorites').charAt(0).toUpperCase() + t('profile:favorites').slice(1),
+                    label: (<span className="flex items-center">{data?.profile?.privateLikes && <IoIosLock />} <span className="ml-1">{t('profile:favorites').charAt(0).toUpperCase() + t('profile:favorites').slice(1)}</span></span>),
                     children: (
                       <>
+                        <p className="text-center font-light text-xs dark:text-gray-200">{t('profile:private-fav')}</p>
                         {/* FAVORITE STORIES */}
                         <div className="profile__right__fav__stories">
                           <h4 className="text-xl mb-8 text-center uppercase font-extralight my-6">{t('profile:favorite-stories')}</h4>

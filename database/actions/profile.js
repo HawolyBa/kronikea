@@ -208,7 +208,6 @@ export const getFollowers = async (id, type, sender) => {
 }
 
 export const getProfile = async (id, type, uid) => {
-  console.log(id, type, uid)
   const allResults = {
     profile: await getUserInfo(id),
     stories: await getUserStories(id, type, uid),
@@ -219,17 +218,10 @@ export const getProfile = async (id, type, uid) => {
     followers: await getFollowers(id, 'recipient', 'senderId'),
     followings: await getFollowers(id, 'senderId', 'recipient')
   }
-  console.log(allResults, 'lolo')
   try {
-    console.log(id, type, uid)
     if (await getUserInfo(id)) {
       return {
-        data: {
-          ...JSON.parse(JSON.stringify(allResults)),
-          userExists: true,
-
-        }
-
+        data: JSON.parse(JSON.stringify({ ...allResults, userExists: true })),
       }
     } else {
       return {
