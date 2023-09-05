@@ -44,7 +44,7 @@ const Feeback = () => {
       <Head>
         <title>{t('legals:feedback')} - Kronikea</title>
       </Head>
-      <div className="p-4 w-full">
+      <div className="md:px-4 py-4 px-2 w-full">
         <div className='bg-white dark:bg-zinc-900 rounded-xl max-w-screen-lg py-8 md:px-12 px-4 mx-auto shadow-lg mb-12'>
           <h2 className='font-light text-2xl uppercase mb-8'>{t('legals:feedback')}</h2>
           <p className="mb-6">{t('legals:feedback-intro')}</p>
@@ -79,16 +79,16 @@ const Feeback = () => {
           <div className='my-3'>
             {message && <Alert message={message} type="success" />}
           </div>
-          <p className="mb-3 mt-6">
+          <p className="mb-5 mt-6">
             {t('legals:feeback-1')}
           </p>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:feeback-2')}
           </p>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:feeback-3')}
           </p>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:feeback-4')}
           </p>
           <Divider />

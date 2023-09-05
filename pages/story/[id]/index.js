@@ -169,23 +169,24 @@ const Story = ({ isLoading, data, storyExists }) => {
             </section>
           </div >
           {/* BOTTOM DETAILS */}
-          <div className="hidden bg-white dark:bg-zinc-900 rounded-lg shadow-lg mt-44 md:flex w-full md:max-w-screen-xl md:mx-auto mb-8 z-40">
-            <div className='w-1/2 p-4'>
-              <Divider className="dark:border-stone-700" orientation="left" plain>
-                <h4 className="text-zinc-800 capitalize dark:text-slate-50">{t('story:main')}</h4>
-              </Divider>
-              {data?.story?.mainCharacters?.length > 0 ?
-                <div className="w-full grid lg:grid-cols-3 grid-cols-2 mb-8 gap-6">
-                  {data?.story?.mainCharacters?.map(char =>
-                    char.public ?
-                      <CharacterCard key={char.id} data={char} /> :
-                      <Badge.Ribbon size="small" text={<span className="flex items-center"><IoIosLock style={{ fontSize: "1.1rem" }} /></span>} color={colors.secondary}>
-                        <CharacterCard key={char.id} data={char} />
-                      </Badge.Ribbon>
-                  )}
-                </div> :
-                <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />}
-              {/* <Divider className="dark:border-stone-700" orientation="left" plain>
+          <div className="px-4">
+            <div className="hidden  bg-white dark:bg-zinc-900 rounded-lg shadow-lg mt-44 md:flex w-full md:max-w-screen-xl md:mx-auto mb-8 z-40">
+              <div className='w-1/2 p-4'>
+                <Divider className="dark:border-stone-700" orientation="left" plain>
+                  <h4 className="text-zinc-800 capitalize dark:text-slate-50">{t('story:main')}</h4>
+                </Divider>
+                {data?.story?.mainCharacters?.length > 0 ?
+                  <div className="w-full grid lg:grid-cols-3 grid-cols-2 mb-8 gap-6">
+                    {data?.story?.mainCharacters?.map(char =>
+                      char.public ?
+                        <CharacterCard key={char.id} data={char} /> :
+                        <Badge.Ribbon size="small" text={<span className="flex items-center"><IoIosLock style={{ fontSize: "1.1rem" }} /></span>} color={colors.secondary}>
+                          <CharacterCard key={char.id} data={char} />
+                        </Badge.Ribbon>
+                    )}
+                  </div> :
+                  <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />}
+                {/* <Divider className="dark:border-stone-700" orientation="left" plain>
                 <h4 className="text-zinc-800 dark:text-slate-50 capitalize">{t('story:secondary')}</h4>
               </Divider>
               {data?.story?.secondaryCharacters?.length > 0 ?
@@ -199,31 +200,32 @@ const Story = ({ isLoading, data, storyExists }) => {
                   ))}
                 </div> :
                 <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />} */}
-              {auth?.user?.uid === data?.story?.authorId && <AddButton name={t('common:add-location')} link={`/location`} />}
-              <Divider className="dark:border-stone-700" orientation="left" plain>
-                <h4 className="text-zinc-800 capitalize dark:text-slate-50">{t('common:locations')}</h4>
-              </Divider>
-              {data?.locations?.length > 0 ?
-                <div className="w-full grid lg:grid-cols-3 grid-cols-2 mb-8 gap-6">
-                  {data?.locations?.map(loc => (
-                    <LocationCard key={loc.id} data={loc} />
-                  ))}
-                </div> :
-                <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />}
-            </div>
-            <div className='w-1/2 py-4 px-8'>
-              <Divider className="dark:border-stone-700" orientation="left" plain>
-                <h4 className="text-zinc-800 dark:text-slate-50 uppercase">{t('story:chapters')}</h4>
-              </Divider>
-              {auth?.user?.uid === data?.story?.authorId && <AddButton name={t('story:add-chapter')} link={`/story/${data?.story?.id}/chapter`} />}
-              {
-                data?.chapters?.length > 0 ?
-                  <Chapters id={data?.story?.id} t={t} chapters={data?.chapters} isAuthor={auth?.user?.uid === data?.story?.authorId} /> :
-                  <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
-              }
-              {/* SIMILAR STORIES  */}
-            </div>
-          </div >
+                {auth?.user?.uid === data?.story?.authorId && <AddButton name={t('common:add-location')} link={`/location`} />}
+                <Divider className="dark:border-stone-700" orientation="left" plain>
+                  <h4 className="text-zinc-800 capitalize dark:text-slate-50">{t('common:locations')}</h4>
+                </Divider>
+                {data?.locations?.length > 0 ?
+                  <div className="w-full grid lg:grid-cols-3 grid-cols-2 mb-8 gap-6">
+                    {data?.locations?.map(loc => (
+                      <LocationCard key={loc.id} data={loc} />
+                    ))}
+                  </div> :
+                  <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />}
+              </div>
+              <div className='w-1/2 py-4 px-8'>
+                <Divider className="dark:border-stone-700" orientation="left" plain>
+                  <h4 className="text-zinc-800 dark:text-slate-50 uppercase">{t('story:chapters')}</h4>
+                </Divider>
+                {auth?.user?.uid === data?.story?.authorId && <AddButton name={t('story:add-chapter')} link={`/story/${data?.story?.id}/chapter`} />}
+                {
+                  data?.chapters?.length > 0 ?
+                    <Chapters id={data?.story?.id} t={t} chapters={data?.chapters} isAuthor={auth?.user?.uid === data?.story?.authorId} /> :
+                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+                }
+                {/* SIMILAR STORIES  */}
+              </div>
+            </div >
+          </div>
           {/* MOBILE  */}
           <div className="relative md:hidden p-2 z-40">
             <div className="rounded-lg py-8 px-4 mb-12 bg-zinc-100 dark:bg-zinc-900 w-full shadow-lg">

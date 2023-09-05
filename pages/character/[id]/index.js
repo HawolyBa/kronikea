@@ -174,68 +174,70 @@ const Character = (props) => {
           </div>
         </div>
         {/* DETAILS MD*/}
-        <div className="my-8 bg-white dark:bg-zinc-900 rounded-lg shadow-lg hidden md:block mt-24 max-w-screen-xl mx-auto py-8 px-4">
-          <div className="md:flex">
-            <div className="md:w-1/2 w-full">
-              <Divider className="dark:border-stone-700" orientation="left" plain>
-                <h4 className='capitalize text-zinc-900 dark:text-slate-50'>
-                  {t('common:stories')}
-                </h4>
-              </Divider>
-              {data?.character?.stories?.length > 0
-                ? <div className="w-full gap-y-6 grid gap-2 mt-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 mb-8 place-content-center place-items-center">
-                  {data?.character?.stories.map((story) => (
-                    story.public ?
-                      <StoryMiniCard width={'100%'} height={72} type="character" key={story.id} data={story} /> :
-                      <Badge.Ribbon size="small" text={<span className="flex items-center"><IoIosLock style={{ fontSize: "1.1rem" }} /></span>} color={colors.secondary}>
-                        <StoryMiniCard width={'100%'} height={72} type="character" key={story.id} data={story} />
-                      </Badge.Ribbon>
-                  ))}
-                </div>
-                : <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
-              }
-              <Divider className="dark:border-stone-700" orientation="left" plain>
-                <h4 className='text-zinc-900 dark:text-slate-50 capitalize'>
-                  {t('character:relationships')}
-                </h4>
-              </Divider>
-              {data?.character?.relatives?.length > 0 ?
-                <div className="w-full grid gap-5 grid-cols-2 mt-3 md:grid-cols-3 ">
-                  {data?.character?.relatives.map(char =>
-                    char.public ?
-                      <CharacterCard type="show" key={char.id} data={char} /> :
-                      <Badge.Ribbon size="small" text={<span className="flex items-center"><IoIosLock style={{ fontSize: "1.1rem" }} /></span>} color={colors.secondary}>
-                        <CharacterCard type="show" key={char.id} data={char} />
-                      </Badge.Ribbon>
-                  )}
-                </div>
-                : <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
-              }
-            </div>
-
-            <div className="md:w-1/2 pl-4 shadow-xl ml-4 w-full">
-              <Divider className="dark:border-stone-700" orientation="left" plain>
-                <h4 className='text-zinc-900 dark:text-slate-50'>
-                  {commentsCount} {t(`${commentsCount > 1 ? 'chapter:comments' : 'chapter:comment'}`)}
-                </h4>
-              </Divider>
-              {!comments?.userComment ?
-                auth?.user ?
-                  <div className="float-right mr-2 mb-2">
-                    <Button onClick={showModal} color="bg-primary">
-                      {t('character:review-character')}
-                    </Button>
+        <div className="px-4">
+          <div className="my-8 bg-white dark:bg-zinc-900 rounded-lg shadow-lg hidden md:block mt-24 max-w-screen-xl mx-auto py-8 px-4">
+            <div className="md:flex">
+              <div className="md:w-1/2 w-full">
+                <Divider className="dark:border-stone-700" orientation="left" plain>
+                  <h4 className='capitalize text-zinc-900 dark:text-slate-50'>
+                    {t('common:stories')}
+                  </h4>
+                </Divider>
+                {data?.character?.stories?.length > 0
+                  ? <div className="w-full gap-y-6 grid gap-2 mt-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 mb-8 place-content-center place-items-center">
+                    {data?.character?.stories.map((story) => (
+                      story.public ?
+                        <StoryMiniCard width={'100%'} height={72} type="character" key={story.id} data={story} /> :
+                        <Badge.Ribbon size="small" text={<span className="flex items-center"><IoIosLock style={{ fontSize: "1.1rem" }} /></span>} color={colors.secondary}>
+                          <StoryMiniCard width={'100%'} height={72} type="character" key={story.id} data={story} />
+                        </Badge.Ribbon>
+                    ))}
                   </div>
-                  :
-                  <p className="float-right mr-2">{t('character:login-message')}
-                    <Button color='bg-primary' onClick={() => push('/auth')}>{t('character:click-here')}</Button></p>
-                : <></>
-              }
-              {(comments?.userComment || comments?.comments?.length > 0) &&
-                <div className="clear-right">
-                  <Comments t={t} authorId={data?.character?.authorId} authorName={data?.character?.authorName} routeId={query.id} type="character-comment" deleteComment={deleteComment} auth={auth} comments={comments?.comments} setRes={setRes} userComment={comments?.userComment} />
-                </div>
-              }
+                  : <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+                }
+                <Divider className="dark:border-stone-700" orientation="left" plain>
+                  <h4 className='text-zinc-900 dark:text-slate-50 capitalize'>
+                    {t('character:relationships')}
+                  </h4>
+                </Divider>
+                {data?.character?.relatives?.length > 0 ?
+                  <div className="w-full grid gap-5 grid-cols-2 mt-3 md:grid-cols-3 ">
+                    {data?.character?.relatives.map(char =>
+                      char.public ?
+                        <CharacterCard type="show" key={char.id} data={char} /> :
+                        <Badge.Ribbon size="small" text={<span className="flex items-center"><IoIosLock style={{ fontSize: "1.1rem" }} /></span>} color={colors.secondary}>
+                          <CharacterCard type="show" key={char.id} data={char} />
+                        </Badge.Ribbon>
+                    )}
+                  </div>
+                  : <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+                }
+              </div>
+
+              <div className="md:w-1/2 pl-4 shadow-xl ml-4 w-full">
+                <Divider className="dark:border-stone-700" orientation="left" plain>
+                  <h4 className='text-zinc-900 dark:text-slate-50'>
+                    {commentsCount} {t(`${commentsCount > 1 ? 'chapter:comments' : 'chapter:comment'}`)}
+                  </h4>
+                </Divider>
+                {!comments?.userComment ?
+                  auth?.user ?
+                    <div className="float-right mr-2 mb-2">
+                      <Button onClick={showModal} color="bg-primary">
+                        {t('character:review-character')}
+                      </Button>
+                    </div>
+                    :
+                    <p className="float-right mr-2">{t('character:login-message')}
+                      <Button color='bg-primary' onClick={() => push('/auth')}>{t('character:click-here')}</Button></p>
+                  : <></>
+                }
+                {(comments?.userComment || comments?.comments?.length > 0) &&
+                  <div className="clear-right">
+                    <Comments t={t} authorId={data?.character?.authorId} authorName={data?.character?.authorName} routeId={query.id} type="character-comment" deleteComment={deleteComment} auth={auth} comments={comments?.comments} setRes={setRes} userComment={comments?.userComment} />
+                  </div>
+                }
+              </div>
             </div>
           </div>
         </div>

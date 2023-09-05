@@ -13,31 +13,31 @@ const About = () => {
       <Head>
         <title>{t('legals:about-us')} - Kronikea</title>
       </Head>
-      <div className="p-4 w-full">
+      <div className="md:px-4 py-4 px-2 w-full">
         <div className='bg-white dark:bg-zinc-900 rounded-xl max-w-screen-lg py-8 md:px-12 px-4 mx-auto shadow-lg mb-12'>
           <h2 className='font-light text-2xl uppercase mb-8'>{t('legals:about-us')}</h2>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:about-intro')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:about-mission')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:about-mission-text')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:about-offer')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:about-offer-1')}
           </p>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:about-offer-2')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:about-community')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:about-community-text')}
           </p>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:about-read')}
           </p>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:about-thanks')}
           </p>
           <h4 className="font-bold mt-6 text-md uppercase">{t('legals:team')}</h4>

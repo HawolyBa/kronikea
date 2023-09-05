@@ -12,23 +12,23 @@ const Terms = () => {
       <Head>
         <title>{t('legals:terms')} - Kronikea</title>
       </Head>
-      <div className="p-4 w-full">
+      <div className="md:px-4 py-4 px-2 w-full">
         <div className='bg-white dark:bg-zinc-900 rounded-xl max-w-screen-lg py-8 md:px-12 px-4 mx-auto shadow-lg mb-12'>
           <h2 className="font-light text-2xl uppercase mb-6">
             {t('legals:terms')}
           </h2>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:terms-intro')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:description')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:description-intro')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:responsibility')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:responsibility-intro')} :
           </p>
-          <ul className="mb-3 ml-2">
+          <ul className="mb-5 ml-2">
             <li className="mb-2">
               3.1. {t('legals:responsibility-1')}
             </li>
@@ -43,7 +43,7 @@ const Terms = () => {
             </li>
           </ul>
           <h4 className="font-bold text-lg uppercase">{t('legals:porn-content')}</h4>
-          <ul className="mb-3 ml-2">
+          <ul className="mb-5 ml-2">
             <li className="mb-2">
               4.1. {t('legals:porn-content-1')}
             </li>
@@ -58,27 +58,27 @@ const Terms = () => {
             </li>
           </ul>
           <h4 className="font-bold text-lg uppercase">{t('legals:intellectual-property')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:intellectual-property-intro')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:privacy')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:privacy-text')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:liability')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:liability-intro')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:terms-update')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:terms-update-intro')}
           </p>
           <h4 className="font-bold text-lg uppercase">{t('legals:termination')}</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:termination-intro')}
           </p>
           <h4 className="font-bold text-lg uppercase">Contact</h4>
-          <p className="mb-3">
+          <p className="mb-5">
             {t('legals:contact-privacy')}
           </p>
           <p>

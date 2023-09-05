@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from 'next/head'
 import Link from 'next/link'
-import nookies from 'nookies'
+// import nookies from 'nookies'
 import { useRouter } from 'next/router'
 import { FiFacebook, FiTwitter, FiInstagram, FiLink } from "react-icons/fi"
 import { FaDeviantart } from "react-icons/fa"
@@ -10,11 +10,12 @@ import { IoIosLogOut, IoIosLock } from "react-icons/io";
 import { Divider, Image, Tabs, Tooltip, Empty, Spin } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
+import { skipToken } from '@reduxjs/toolkit/query'
 
 import { useAuth } from '../../../database/auth'
-import { useChangeProfileMutation } from '../../../database/reducers/profile'
-import { getProfile } from "../../../database/actions/profile";
-import config from '../../../database/firebaseConfig'
+import { useChangeProfileMutation, useGetProfileQuery } from '../../../database/reducers/profile'
+// import { getProfile } from "../../../database/actions/profile";
+// import config from '../../../database/firebaseConfig'
 
 import Pagination from "../../../components/common/Pagination";
 import Settings from "../../../components/profile/Settings";
@@ -23,11 +24,12 @@ import SocialButtons from "../../../components/header/SocialButtons";
 import { placeholders } from "../../../utils/constants";
 import AddToFavorites from "../../../components/common/AddToFavorites";
 
-const Profile = (props) => {
+const Profile = () => {
 
   // TODO - CHANGE LINK COPY PATH WHEN LIVE !!!
 
-  const { data, isLoading, userExists } = props
+  // const { data, isLoading, userExists } = props
+
   const auth = useAuth()
 
   const router = useRouter()
@@ -38,7 +40,7 @@ const Profile = (props) => {
     username: '',
   })
   const [changeProfile] = useChangeProfileMutation()
-
+  const { data, isLoading } = useGetProfileQuery({ id: router.query.id, type: 'show', uid: auth?.user?.uid ?? skipToken })
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFollowersOpen, setIsFollowersOpen] = useState(false)
@@ -55,11 +57,11 @@ const Profile = (props) => {
 
   React.useEffect(() => {
     if (!isLoading) {
-      if (!userExists) {
+      if (!data?.userExists) {
         router.push('/404')
       }
     }
-  }, [userExists, isLoading])
+  }, [data?.userExists, isLoading])
 
   const changePassword = (values) => {
     auth.changePassword(values.oldPassword, values.newPassword)
@@ -85,7 +87,7 @@ const Profile = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        <Spin spinning={!userExists || auth.isLoading || isLoading}>
+        <Spin spinning={!data?.userExists || auth.isLoading || isLoading}>
           <div className="md:px-4 mx-auto max-w-screen-xl" id="profile">
             <section className={`md:mt-6 relative`}>
               {/* BANNER */}
@@ -272,17 +274,17 @@ const Profile = (props) => {
 }
 
 export const getServerSideProps = async (context) => {
-  const admin = require('firebase-admin');
-  if (!admin.apps.length) admin.initializeApp(config);
+  // const admin = require('firebase-admin');
+  // if (!admin.apps.length) admin.initializeApp(config);
 
-  const cookies = nookies.get(context);
-  const token = cookies.token ? await admin.auth().verifyIdToken(cookies.token) : null;
-  const uid = token ? token.uid : null;
-  const data = await getProfile(context.query.id, 'show', uid)
+  // const cookies = nookies.get(context);
+  // const token = cookies.token ? await admin.auth().verifyIdToken(cookies.token) : null;
+  // const uid = token ? token.uid : null;
+  // const data = await getProfile(context.query.id, 'show', uid)
   return {
     props: {
-      data: data.data,
-      userExists: data.userExists,
+      // data: data.data,
+      // userExists: data.userExists,
       ...(await serverSideTranslations(context.locale, ["profile", 'form', 'auth', "common"]))
     },
   };

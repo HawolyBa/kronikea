@@ -42,8 +42,9 @@ export const profileAPI = createApi({
       invalidatesTags: ["profile"]
     }),
     getProfile: builder.query({
-      async queryFn(id) {
-        return getProfile(id)
+      async queryFn(data) {
+        console.log(data)
+        return getProfile(data.id, data.type, data.uid)
       },
       providesTags: ["profile"]
     }),

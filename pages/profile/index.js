@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from 'next/head'
 import Link from 'next/link'
-import nookies from 'nookies'
+// import nookies from 'nookies'
 import { useRouter } from 'next/router'
 import { FiFacebook, FiTwitter, FiInstagram, FiLink } from "react-icons/fi"
 import { FaDeviantart } from "react-icons/fa"
@@ -10,12 +10,12 @@ import { IoIosLogOut } from "react-icons/io";
 import { Divider, Image, Tabs, Tooltip, Empty, Spin } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
-import serviceAccount from "../../database/serviceAccount"
+// import serviceAccount from "../../database/serviceAccount"
 import { skipToken } from '@reduxjs/toolkit/query'
 
 import { useAuth } from '../../database/auth'
 import { useChangeProfileMutation, useGetProfileQuery } from '../../database/reducers/profile'
-import { getProfile } from "../../database/actions/profile";
+// import { getProfile } from "../../database/actions/profile";
 
 import Pagination from "../../components/common/Pagination";
 import Settings from "../../components/profile/Settings";
@@ -29,7 +29,7 @@ const Profile = () => {
   const auth = useAuth()
   const router = useRouter()
   const [changeProfile] = useChangeProfileMutation()
-  const { data, isLoading } = useGetProfileQuery(auth?.user?.uid ?? skipToken)
+  const { data, isLoading } = useGetProfileQuery({ id: auth?.user?.uid ?? skipToken, type: 'profile', uid: auth?.user?.uid ?? skipToken })
   const showMessage = React.useRef(false)
   const [message, setMessage] = React.useState(null)
 
@@ -84,7 +84,7 @@ const Profile = () => {
       </Head>
       <>
         <Spin spinning={auth.isLoading || isLoading || !auth.user}>
-          <div className="md:px-4 mx-auto max-w-screen-xl" id="profile">
+          <div className="md:px-4 px-2 mx-auto max-w-screen-xl" id="profile">
             <section className={`md:mt-6 relative`}>
               {/* BANNER */}
               <div style={{ backgroundImage: `url(${newData.banner ? newData.banner : data?.profile?.banner ? data?.profile?.banner : placeholders.card})` }} className={` bg-center h-56 w-full md:rounded-3xl bg-cover relative flex md:items-center items-start justify-between md:justify-end`}>

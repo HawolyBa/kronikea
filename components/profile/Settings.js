@@ -60,7 +60,6 @@ const Settings = ({ message, auth, success, errors, t, profile, changePassword, 
         maskClosable={true}
         closable
         onCancel={() => setIsModalOpen(false)}
-        // width={'50%'}
         title={mode === 'settings' ? t('profile:profile-settings') : mode === 'delete' ? 'Delete your account' : t('profile:change-password')}
         open={isModalOpen}
         footer={mode === 'settings' && [

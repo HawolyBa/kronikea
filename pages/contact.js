@@ -41,7 +41,7 @@ const Contact = () => {
       <Head>
         <title>Contact - Kronikea</title>
       </Head>
-      <div className="contact p-4 w-full">
+      <div className="contact md:px-4 py-4 px-2 w-full">
         <div className='bg-white dark:bg-zinc-900 rounded-xl max-w-screen-lg py-8 md:px-12 px-4 mx-auto shadow-lg'>
           <h2 className='text-center font-light text-2xl uppercase mb-8'>{t('legals:contact-us')}</h2>
           <p className="mb-4">{t('legals:contact-us-intro')}</p>

@@ -23,8 +23,6 @@ const Menu = ({ t, darkTheme, changeTheme, activeCategories, setActiveCategories
     return () => window.removeEventListener("resize", updateDimensions);
   }, [updateDimensions]);
 
-  console.log(width)
-
   return (
     <Drawer
       placement="left"
