@@ -61,7 +61,7 @@ const CatSlider = ({ t }) => {
         <NextButton />
         <PrevButton />
         <ins className="adsbygoogle"
-          style="display:block"
+          style={{ display: "block" }}
           data-ad-client="ca-pub-2847418034592467"
           data-ad-slot="5007136949"
           data-ad-format="auto"

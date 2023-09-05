@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { colors } from '../../utils/constants'
+import { capitalize } from '../../utils/helpers'
 import NextButton from './NextButton'
 import PrevButton from './PrevButton'
 import TripleCard from './TripleCard';
@@ -26,7 +27,7 @@ const Slider = ({ data, t }) => {
         <div className="w-full md:w-1/2 flex flex-col p-8 justify-center transition-all duration-75 ease-in md:order-1 order-2">
           <div className='border-l-8 p-2' style={{ borderColor: colors.secondary }}>
             <h2 className="md:leading-2 text-xs md:text-lg uppercase tracking-widest">{data && data[currentSlide]?.title}</h2>
-            <span>By {data && data[currentSlide]?.authorName}</span>
+            <span>{capitalize(t('common:by'))} {data && data[currentSlide]?.authorName}</span>
             <div className='flex items-center mt-4'>
               <div className='flex items-center text-xl text-zinc-500 dark:text-slate mr-6'><FaEye /><span className='ml-1'>{data && data[currentSlide]?.views ? data[currentSlide]?.views : 0} {t('common:views')}</span></div>
               <div className='flex items-center  text-xl text-zinc-500 dark:text-slate'><FaStar /><span className='ml-1'>{data && data[currentSlide]?.likedBy?.length} {t('common:favorites')}</span></div>
