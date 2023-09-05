@@ -27,13 +27,11 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
   const { t } = useTranslation();
 
   React.useEffect(() => {
-    var ads = document.getElementsByClassName("adsbygoogle").length;
-    for (var i = 0; i < ads; i++) {
-      try {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (e) { }
+    if (window) {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     }
   }, []);
+
   return (
     <>
       <Head>
@@ -46,7 +44,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
         <main className="home max-w-screen-xl mx-auto pb-8 md:pt-8">
           <Slider t={t} data={data?.featured} />
           <SliderMobile t={t} data={data?.featured} />
-          <ins class="adsbygoogle"
+          <ins className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-2847418034592467"
             data-ad-slot="5483409976"
