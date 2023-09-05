@@ -27,12 +27,6 @@ const CatSlider = ({ t }) => {
   }, [updateDimensions]);
 
   React.useEffect(() => {
-    if (window) {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    }
-  }, []);
-
-  React.useEffect(() => {
     let number = null
     if (width > 1280) {
       number = 5
@@ -66,7 +60,7 @@ const CatSlider = ({ t }) => {
       >
         <NextButton />
         <PrevButton />
-        <ins class="adsbygoogle"
+        <ins className="adsbygoogle"
           style="display:block"
           data-ad-client="ca-pub-2847418034592467"
           data-ad-slot="5007136949"
