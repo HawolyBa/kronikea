@@ -27,6 +27,12 @@ const CatSlider = ({ t }) => {
   }, [updateDimensions]);
 
   React.useEffect(() => {
+    if (window) {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  }, []);
+
+  React.useEffect(() => {
     let number = null
     if (width > 1280) {
       number = 5
