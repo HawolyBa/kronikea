@@ -156,6 +156,12 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
     }
   }, [data, auth, isLoading])
 
+  React.useEffect(() => {
+    if (window) {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -265,6 +271,13 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
               </aside>
               <div className="chapter__content w-9/10 bg-white dark:bg-zinc-900 py-8 relative min-h-screen rounded-xl overflow-hidden md:px-12 px-4 shadow-md">
                 <div dangerouslySetInnerHTML={{ __html: data?.body }} className={`chapter__body text-justify text ${font}`}></div>
+
+                <Divider className="dark:border-stone-700" />
+                <ins className="adsbygoogle"
+                  style={{ display: "block" }}
+                  data-ad-format="autorelaxed"
+                  data-ad-client="ca-pub-2847418034592467"
+                  data-ad-slot="7628596707"></ins>
                 <Divider className="dark:border-stone-700" />
                 <div>
                   <div className="md:flex md:justify-between items-center">
