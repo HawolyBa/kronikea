@@ -44,12 +44,14 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
         <main className="home max-w-screen-xl mx-auto pb-8 md:pt-8">
           <Slider t={t} data={data?.featured} />
           <SliderMobile t={t} data={data?.featured} />
-          <ins className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-2847418034592467"
-            data-ad-slot="5483409976"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
+          <div className="mt-4">
+            <ins className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-2847418034592467"
+              data-ad-slot="5483409976"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+          </div>
           <CatSlider t={t} />
           {/* POPULAR STORIES */}
           <div className="mt-12 px-4">
