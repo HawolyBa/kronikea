@@ -21,6 +21,7 @@ import LocationCard from '../../../../../components/common/LocationCard'
 import Author from '../../../../../components/common/Author'
 import Banner from '../../../../../components/common/Banner'
 import AddReview from '../../../../../components/common/AddReview'
+import Ads from '../../../../../components/common/Ads'
 
 const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
 
@@ -156,12 +157,6 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
     }
   }, [data, auth, isLoading])
 
-  React.useEffect(() => {
-    if (window) {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    }
-  }, []);
-
   return (
     <>
       <Head>
@@ -273,11 +268,12 @@ const Chapter = ({ darkTheme, data, isLoading, storyExists }) => {
                 <div dangerouslySetInnerHTML={{ __html: data?.body }} className={`chapter__body text-justify text ${font}`}></div>
 
                 <Divider className="dark:border-stone-700" />
-                <ins className="adsbygoogle"
+                <Ads adCode={7628596707} />
+                {/* <ins className="adsbygoogle"
                   style={{ display: "block" }}
                   data-ad-format="autorelaxed"
                   data-ad-client="ca-pub-2847418034592467"
-                  data-ad-slot="7628596707"></ins>
+                  data-ad-slot="7628596707"></ins> */}
                 <Divider className="dark:border-stone-700" />
                 <div>
                   <div className="md:flex md:justify-between items-center">
