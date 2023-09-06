@@ -184,15 +184,16 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                       }
                     </div>
                   </div>
-                  <ins className="adsbygoogle"
-                    style={{ display: "block" }}
-                    data-ad-client="ca-pub-2847418034592467"
-                    data-ad-slot="9382895021"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
+
                 </div>
               </div>
             </div>
+            <ins className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-2847418034592467"
+              data-ad-slot="9382895021"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
           </div>
         </main>
       </Spin>
