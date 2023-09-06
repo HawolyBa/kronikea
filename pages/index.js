@@ -111,13 +111,14 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                   </div>
                 ))}
               </div>
-              <div className="flex items-end">
-                <div className='w-3/4 mr-5'>
+              <div className="md:flex items-start">
+                {/* POPULAR CHARACTERS */}
+                <div className='md:w-3/4 w-full mr-5'>
                   <Divider orientation="left" plain className="dark:border-stone-700">
                     <h3 className="uppercase dark:text-zinc-50 font-light home__heading">{t('home:popular-characters')}</h3>
                   </Divider>
-                  <div style={{ height: "500px" }} className="w-full bg-white dark:bg-zinc-900 p-8 flex">
-                    <div className="w-2/3 h-full mr-3">
+                  <div className="w-full bg-white dark:bg-zinc-900 p-8 md:flex chara-bloc">
+                    <div className="md:w-2/3 w-full h-full chara-bloc-1 mr-3">
                       <Link href={`/character/${characters[0].id}`}>
                         <figure className="chara-card h-full transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-xl min-w-36 w-full max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg">
                           <div className={`w-full h-5/6 rounded-xl overflow-hidden relative after-border after:absolute after:dark:border-zinc-800 after:border after:content-[''] after:bg-transparent after:rounded-xl`}>
@@ -131,10 +132,10 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                         </figure>
                       </Link>
                     </div>
-                    <div className="w-1/3 h-full flex flex-col">
-                      <div style={{ height: "48%", marginBottom: "6%" }} className="w-full">
+                    <div className="md:w-1/3 w-full h-full flex md:flex-col">
+                      <div className="w-full chara-bloc-2">
                         <Link href={`/character/${characters[1].id}`}>
-                          <figure className="chara-card w-full h-full transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-xl min-w-36 w-full max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg">
+                          <figure className="chara-card w-full h-full transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-xl min-w-36 max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg">
                             <div className={`w-full h-5/6 rounded-xl overflow-hidden relative after-border after:absolute after:dark:border-zinc-800 after:border after:content-[''] after:bg-transparent after:rounded-xl`}>
                               <img className="w-full h-full object-cover" src={characters[1].image ? characters[1].image : placeholders.card} alt={`${characters[1].firstname} ${characters[1].lastname}`} />
                             </div>
@@ -146,7 +147,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                           </figure>
                         </Link>
                       </div>
-                      <div style={{ height: "48%" }} className="w-full">
+                      <div className="w-full chara-bloc-3">
                         <Link href={`/character/${characters[2].id}`}>
                           <figure className="chara-card h-full transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-xl min-w-36 w-full max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg">
                             <div className={`w-full h-5/6 rounded-xl overflow-hidden relative after-border after:absolute after:dark:border-zinc-800 after:border after:content-[''] after:bg-transparent after:rounded-xl`}>
@@ -163,12 +164,13 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                     </div>
                   </div>
                 </div>
-                <div className="w-1/4">
+                {/* POPULAR AUTHORS */}
+                <div className="md:w-1/4 w-full mb-12">
                   <Divider orientation="left" plain className="dark:border-stone-700">
                     <h3 className="uppercase dark:text-zinc-50 font-light home__heading">{t('home:popular-authors')}</h3>
                   </Divider>
-                  <div style={{ height: "500px" }} className="w-full p-4">
-                    <div className="grid gap-5 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+                  <div className="w-full p-4">
+                    <div className="grid gap-5 grid-cols-5 place-items-center">
                       {
                         authors.map(user => (
                           <Tooltip key={user.id} placement="bottom" title={user.username}>

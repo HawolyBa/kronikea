@@ -54,6 +54,23 @@
       }
     }
   }
+
+  .chara-bloc {
+    height: 500px;
+
+    .chara-bloc-1 {
+      height: 435px
+    }
+
+    .chara-bloc-2 {
+      margin-bottom: 6%
+    }
+
+    .chara-bloc-2,
+    .chara-bloc-3 {
+      height: 48%
+    }
+  }
 }
 
 .swiper-wrapper {
@@ -65,6 +82,24 @@
     .carousel {
       h2 {
         font-size: 1.2rem;
+      }
+    }
+
+    .chara-bloc {
+      height: auto;
+
+      .chara-bloc-1 {
+        height: 300px;
+        margin-bottom: 20px
+      }
+
+      .chara-bloc-2 {
+        margin-right: 20px
+      }
+
+      .chara-bloc-2,
+      .chara-bloc-3 {
+        height: 170px
       }
     }
   }
