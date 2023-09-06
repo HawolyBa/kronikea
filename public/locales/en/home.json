@@ -1,1 +1,8 @@
-{"popular-characters":"Popular Characters","popular-stories":"Popular Stories","read":"Read","see-all":"See All"}
+{
+  "popular-characters": "Popular Characters",
+  "popular-stories": "Popular Stories",
+  "popular-authors": "Popular Authors",
+  "read": "Read",
+  "see-all": "See All",
+  "see-more": "See more"
+}

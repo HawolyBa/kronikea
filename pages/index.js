@@ -79,7 +79,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                     <StoryCardMini type="other" key={story.id} data={story} />
                   ))}
                 </div>
-                <Link href="/category/drama">{'See More >>'}</Link>
+                <Link href="/category/drama">{`${t('home:see-more')} >>`}</Link>
               </div>
               <div className="md:px-2 md:border-r md:dark:border-neutral-800">
                 <h4 className="text-lg mb-6">{t('common:crime')}</h4>
@@ -88,7 +88,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                     <StoryCardMini type="other" key={story.id} data={story} />
                   ))}
                 </div>
-                <Link href="/category/crime">{'See More >>'}</Link>
+                <Link href="/category/crime">{`${t('home:see-more')} >>`}</Link>
               </div>
               <div className="md:px-2">
                 <h4 className="text-lg mb-6">{t('common:fantasy')}</h4>
@@ -97,7 +97,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                     <StoryCardMini type="other" key={story.id} data={story} />
                   ))}
                 </div>
-                <Link href="/category/fantasy">{'See More >>'}</Link>
+                <Link href="/category/fantasy">{`${t('home:see-more')} >>`}</Link>
               </div>
             </section>
             <div className="mt-12 px-4">
