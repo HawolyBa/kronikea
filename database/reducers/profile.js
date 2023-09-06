@@ -17,6 +17,7 @@
 
 import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react'
 import { report, getUserInfo, getProfile, changeProfile, followUser, getForYouPage, sendMessage, sendFeedback } from '../actions/profile'
+import { getPopularAuthors } from '../actions/users'
 
 export const profileAPI = createApi({
   reducerPath: 'profileAPI',
@@ -67,8 +68,13 @@ export const profileAPI = createApi({
       async queryFn(data) {
         return sendFeedback(data)
       }
+    }),
+    getPopularAuthors: builder.query({
+      async queryFn(data) {
+        return getPopularAuthors()
+      }
     })
   })
 })
 
-export const { useGetUserInfoQuery, useChangeProfileMutation, useReportMutation, useGetProfileQuery, useFollowUserMutation, useGetForYouPageQuery, useSendMessageMutation, useSendFeedbackMutation } = profileAPI
+export const { useGetUserInfoQuery, useChangeProfileMutation, useReportMutation, useGetProfileQuery, useFollowUserMutation, useGetForYouPageQuery, useSendMessageMutation, useSendFeedbackMutation, useGetPopularAuthorsQuery } = profileAPI

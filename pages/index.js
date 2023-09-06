@@ -1,12 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Divider, Spin } from 'antd'
+import Image from 'next/image'
+import { Divider, Spin, Tooltip } from 'antd'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 
 import { useAuth } from '../database/auth'
 import { useGetFeaturedQuery } from '../database/reducers/stories'
+import { placeholders } from '../utils/constants'
 
 import StoryMiniCard from '../components/common/StoryMiniCard'
 import CharacterCard from '../components/common/CharacterCard'
@@ -16,8 +18,9 @@ import StoryCardMini from '../components/common/StoryCardMini'
 import { getPopularStories, getPopularStoriesByCategory } from '../database/actions/stories'
 import { getPopularCharacters } from '../database/actions/characters'
 import SliderMobile from '../components/home/SliderMobile'
+import { getPopularAuthors } from '../database/actions/users'
 
-const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloading }) => {
+const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloading, authors }) => {
 
   // TODO - ADD CTA FOR LOGIN 
 
@@ -31,6 +34,8 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     }
   }, []);
+
+  console.log(authors)
 
   return (
     <>
@@ -106,7 +111,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                   </div>
                 ))}
               </div>
-              {/* <div className="flex items-end">
+              <div className="flex items-end">
                 <div className='w-3/4 mr-5'>
                   <Divider orientation="left" plain className="dark:border-stone-700">
                     <h3 className="uppercase dark:text-zinc-50 font-light home__heading">{t('home:popular-characters')}</h3>
@@ -114,7 +119,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                   <div style={{ height: "500px" }} className="w-full bg-white dark:bg-zinc-900 p-8 flex">
                     <div className="w-2/3 h-full mr-3">
                       <Link href={`/character/${characters[0].id}`}>
-                        <figure className="chara-card w-full h-full transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-xl min-w-36 w-full max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg">
+                        <figure className="chara-card h-full transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-xl min-w-36 w-full max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg">
                           <div className={`w-full h-5/6 rounded-xl overflow-hidden relative after-border after:absolute after:dark:border-zinc-800 after:border after:content-[''] after:bg-transparent after:rounded-xl`}>
                             <img className="w-full h-full object-cover" src={characters[0].image ? characters[0].image : placeholders.card} alt={`${characters[0].firstname} ${characters[0].lastname}`} />
                           </div>
@@ -143,7 +148,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                       </div>
                       <div style={{ height: "48%" }} className="w-full">
                         <Link href={`/character/${characters[2].id}`}>
-                          <figure className="chara-card w-full h-full transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-xl min-w-36 w-full max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg">
+                          <figure className="chara-card h-full transition duration-300 cursor-pointer bg-white dark:bg-zinc-900 rounded-xl min-w-36 w-full max-w-44 flex flex-col items-center overflow-hidden text-zinc-900 dark:text-slate-100 shadow-lg">
                             <div className={`w-full h-5/6 rounded-xl overflow-hidden relative after-border after:absolute after:dark:border-zinc-800 after:border after:content-[''] after:bg-transparent after:rounded-xl`}>
                               <img className="w-full h-full object-cover" src={characters[2].image ? characters[2].image : placeholders.card} alt={`${characters[2].firstname} ${characters[2].lastname}`} />
                             </div>
@@ -159,11 +164,32 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                   </div>
                 </div>
                 <div className="w-1/4">
-                  <div style={{ height: "500px" }} className="bg-white w-full p-4">
-                    <h3 className="uppercase font-light">Popular authors</h3>
+                  <Divider orientation="left" plain className="dark:border-stone-700">
+                    <h3 className="uppercase dark:text-zinc-50 font-light home__heading">{t('home:popular-authors')}</h3>
+                  </Divider>
+                  <div style={{ height: "500px" }} className="w-full p-4">
+                    <div className="grid gap-5 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+                      {
+                        authors.map(user => (
+                          <Tooltip key={user.id} placement="bottom" title={user.username}>
+                            <Link href={`/profile/${user.id}`}>
+                              <div className="w-10 h-10 rounded-full overflow-hidden relative">
+                                <Image src={user.image ? user.image : placeholders.avatar} alt={user.username} fill style={{ objectFit: 'cover' }} />
+                              </div>
+                            </Link>
+                          </Tooltip>
+                        ))
+                      }
+                    </div>
                   </div>
+                  <ins className="adsbygoogle"
+                    style={{ display: "block" }}
+                    data-ad-client="ca-pub-2847418034592467"
+                    data-ad-slot="9382895021"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </main>
@@ -178,6 +204,7 @@ export async function getStaticProps({ locale }) {
   const crime = await getPopularStoriesByCategory('crime')
   const fantasy = await getPopularStoriesByCategory('fantasy')
   const characters = await getPopularCharacters()
+  const authors = await getPopularAuthors()
   return {
     props: {
       characters: characters.data || null,
@@ -185,6 +212,7 @@ export async function getStaticProps({ locale }) {
       crime: crime.data || null,
       drama: drama.data || null,
       popular: popular.data || null,
+      authors: authors.data || null,
       ...(await serverSideTranslations(locale, ["home", "common"]))
     }
   }

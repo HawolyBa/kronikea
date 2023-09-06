@@ -56,8 +56,8 @@ const Menu = ({ t, darkTheme, changeTheme, activeCategories, setActiveCategories
         </Link>
         <ul>
           {CATEGORIES.map(cat => (
-            <li className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`} key={cat.name} onClick={() => setActiveCategories(false)}>
-              <Link href={`/category/${cat.name}`}>{t(`common:${cat.value}`)}</Link>
+            <li className={`text-base border-b ${darkTheme ? 'border-neutral-800' : 'border-slate-100'} cursor-pointer py-2 capitalize`} key={cat.name} >
+              <Link onClick={() => setActiveCategories(false)} href={`/category/${cat.name}`}>{t(`common:${cat.value}`)}</Link>
             </li>
           ))}
         </ul>

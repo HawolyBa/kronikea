@@ -1,6 +1,6 @@
 import { db, storage } from "../firebaseConfig";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { updateDoc, doc, collection } from 'firebase/firestore'
+import { updateDoc, doc, collection, getDocs, query, limit, orderBy } from 'firebase/firestore'
 
 export const changeProfile = (dispatch, data, id) => {
   const username = data.username.toLowerCase().replace(/\s/g, '')
@@ -50,4 +50,19 @@ export const report = data => {
     });
   }
 
+}
+
+export const getPopularAuthors = async () => {
+  try {
+    const usersRef = await getDocs(query(collection(db, "users"), orderBy("likedBy", "desc"), limit(20)))
+    let result = [];
+    usersRef.forEach((doc) => result.push({ id: doc.id, ...doc.data() }));
+    console.log(usersRef)
+    return {
+      data: JSON.parse(JSON.stringify(result))
+    }
+  } catch (e) {
+    console.log(e)
+    return { error: "Something went wrong" }
+  }
 }
