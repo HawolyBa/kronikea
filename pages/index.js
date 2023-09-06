@@ -12,6 +12,7 @@ import { placeholders } from '../utils/constants'
 
 import StoryMiniCard from '../components/common/StoryMiniCard'
 import CharacterCard from '../components/common/CharacterCard'
+import Ads from '../components/common/Ads'
 import Slider from '../components/home/Slider'
 import CatSlider from '../components/home/CatSlider'
 import StoryCardMini from '../components/common/StoryCardMini'
@@ -29,14 +30,6 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
 
   const { t } = useTranslation();
 
-  React.useEffect(() => {
-    if (window) {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    }
-  }, []);
-
-  console.log(authors)
-
   return (
     <>
       <Head>
@@ -50,12 +43,7 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
           <Slider t={t} data={data?.featured} />
           <SliderMobile t={t} data={data?.featured} />
           <div className="mt-4">
-            <ins className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-2847418034592467"
-              data-ad-slot="5483409976"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
+            <Ads adCode={5483409976} />
           </div>
           <CatSlider t={t} />
           {/* POPULAR STORIES */}
@@ -184,16 +172,10 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
                       }
                     </div>
                   </div>
-
+                  <Ads adCode={9382895021} />
                 </div>
               </div>
             </div>
-            <ins className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-2847418034592467"
-              data-ad-slot="9382895021"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
           </div>
         </main>
       </Spin>
