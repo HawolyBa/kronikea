@@ -95,7 +95,7 @@ const Character = (props) => {
       </Head>
       <Spin spinning={auth.isLoading || isLoading || !data?.charaExists || (!data?.character?.public && data?.character?.authorId !== auth.user.uid)}>
         <div className="w-full character text-zinc-900 dark:text-slate-50">
-          <div className='max-w-screen-xl w-full md:px-4 mx-auto md:pt-6'>
+          <div className='max-w-screen-xl w-full md:px-4 mx-auto md:pt-6 '>
             <Banner image={data?.character?.image}>
               <div className="w-full flex md:items-center items-start md:justify-end md:pr-8 lg:pr-24 h-full overflow-hidden rounded-3xl z-20">
                 <div className="w-full flex items-center md:justify-end justify-between px-8 py-6 md:py-0">
@@ -242,7 +242,7 @@ const Character = (props) => {
           </div>
         </div>
         {/* DETAILS SM */}
-        <div className="w-full relative z-30 p-4 md:hidden">
+        <div className="w-full relative z-30 p-4 md:hidden mb-12">
           <div className="dark:bg-zinc-900 px-4 pb-8 rounded-xl shadow-lg dark:text-slate-50">
             <Tabs centered defaultActiveKey="item-1" items={[
               {

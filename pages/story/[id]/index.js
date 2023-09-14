@@ -85,7 +85,7 @@ const Story = ({ isLoading, data, storyExists }) => {
                 </div>
               </div>
             </Banner>
-            <section className="z-30 bg-slate-50 -mb-32 md:mb-0 bg-transparent relative md:top-0 -top-8 rounded-t-3xl h-fit w-full flex flex-col md:flex-row md:items-start items-center">
+            <section className="bg-slate-50 z-30 -mb-32 md:mb-0 dark:bg-zinc-800 relative md:top-0 -top-8 md:rounded-none rounded-3xl h-fit w-full flex flex-col md:flex-row md:items-start items-center">
               <div className="md:w-80 w-full md:ml-12 lg:ml-24 h-full relative flex items-center justify-center">
                 <div className="w-full flex items-center justify-center -top-28 relative md:absolute flex-col">
                   <div className={`poster mb-5 before:bg-slate-50 before:dark:bg-zinc-800 before:absolute before:content-[''] before:rounded-lg before:shadow-lg flex items-center justify-center rounded-lg z-20`}>
@@ -96,6 +96,7 @@ const Story = ({ isLoading, data, storyExists }) => {
                       alt={data?.story?.title}
                       style={{ borderRadius: "5px", objectFit: "cover" }}
                     />
+
                   </div>
                   <div className='md:hidden flex px-12'>
                     <h2 className="text-xl uppercase font-bold text-center">{data?.story?.title}</h2>

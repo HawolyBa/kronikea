@@ -42,16 +42,16 @@ const Home = ({ characters, popular, drama, crime, fantasy, isLoading: isDataloa
         <main className="home max-w-screen-xl mx-auto pb-8 md:pt-8">
           <Slider t={t} data={data?.featured} />
           <SliderMobile t={t} data={data?.featured} />
+          <CatSlider t={t} />
           <div className="mt-4">
             <Ads adCode={5483409976} />
           </div>
-          <CatSlider t={t} />
           {/* POPULAR STORIES */}
           <div className="mt-12 px-4">
             <Divider className="dark:border-stone-700" orientation="left" plain>
               <h3 className="uppercase dark:text-zinc-50 font-light home__heading">{t('home:popular-stories')}</h3>
             </Divider>
-            <div className="grid my-8 gap-5 grid-cols-2 lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-4 place-items-center">
+            <div className="grid my-8 gap-5 grid-cols-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 place-items-center">
               {popular?.map((story, i) => (
                 <div before={i + 1} key={story.id} className="relative before:content-[attr(before)] before:absolute before:text-8xl before:-left-9 before:-top-10 before:text-gray-200 before:dark:text-zinc-900">
                   <StoryMiniCard width={'full'} height={60} data={story} />
