@@ -87,15 +87,7 @@
   }
 }
 
-@media (min-width: 768px) {
-  .story {
-    .story-cover {
-      height: 45vh;
-    }
-  }
-}
-
-@media (max-width: 768px) {
+@media (min-width: 810px) {
   .story {
     .poster {
       width: 200px;
@@ -105,6 +97,10 @@
         width: 210px;
         height: 310px;
       }
+    }
+
+    .story-cover {
+      height: 45vh;
     }
   }
 }
@@ -121,7 +117,7 @@
   }
 }
 
-@media (max-width:1280px) and (min-width:768px) {
+@media (max-width:1280px) and (min-width:810px) {
   .story {
     .poster {
       width: 270px;
